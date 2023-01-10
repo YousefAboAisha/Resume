@@ -1,7 +1,9 @@
+import { motion, useScroll } from "framer-motion"
 import Head from "next/head"
-import Faw from "../Components/faw"
 
 export default function Home() {
+  const { scrollYProgress } = useScroll()
+
   return (
     <>
       <Head>
@@ -10,10 +12,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.png" />
       </Head>
-      <main className="bg-primary_dark container text-center p-2 text-secondary_light">
-        <p>بسم الله الرحمن الرحيم</p>
-        <h2>بسم الله الرحمن الرحيم</h2>
-        <Faw />
+      <main className="container text-center p-2">
+        {/* <motion.div
+          className="fixed top-0 left-0 right-0 origin-left bg-primary_dark h-[2px]"
+          style={{ scaleX: scrollYProgress }}
+        /> */}
       </main>
     </>
   )

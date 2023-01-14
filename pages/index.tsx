@@ -15,7 +15,7 @@ export default function Home() {
       <main className="container">
         <div className="relative flex flex-col justify-center items-center mt-6 lg:mt-16 ">
           <Image
-            src={"/PC.png"}
+            src={"/landing.png"}
             width={450}
             height={450}
             alt="image"

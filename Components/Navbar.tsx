@@ -2,12 +2,13 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import { Routes } from "../Data/Routes"
+import { useScrollDirection } from "../Hooks/useScrollDirection"
 
 const Navbar = () => {
   const router = useRouter()
   const [Style, setStyle] = useState("")
-
   const path = router.pathname
+  const scrollDirection = useScrollDirection()
 
   const setTransform = () => {
     switch (path) {
@@ -29,8 +30,14 @@ const Navbar = () => {
     setTransform()
   }, [path])
 
+  console.log(scrollDirection)
+
   return (
-    <div className="fixed flex items-center justify-center bottom-2 md:top-2 left-[50%] translate-x-[-50%] text-primary_dark border rounded-[20px] outline-none w-6/12 md:w-3/12 h-8">
+    <div
+      className={`fixed ${
+        scrollDirection === "down" ? "lg:-top-12" : "lg:top-4"
+      } flex items-center justify-center bottom-2 left-[50%] translate-x-[-50%] text-white border rounded-[25px] outline-none w-6/12 md:w-3/12 h-12 duration-500 bg-[#00000013] backdrop-blur-sm z-50`}
+    >
       {Routes.map((elem, index) => {
         return (
           <Link
@@ -38,15 +45,15 @@ const Navbar = () => {
             href={elem.href}
             className={`flex peer/${
               elem.title
-            } first:rounded-l-[20px] border-r last:rounded-r-[20px] last-of-type:border-r-0 justify-center items-center h-full  w-full duration-300 cursor-pointer 
-            ${router.pathname == `${elem.href}` ? "text-secondary_dark" : ""} `}
+            } first:rounded-l-[25px] border-r last:rounded-r-[25px] last-of-type:border-r-0 justify-center items-center h-full w-full duration-300 cursor-pointer 
+            ${router.pathname == `${elem.href}` ? "text-primary_dark" : ""} `}
           >
-            {<elem.icon />}
+            {<elem.icon size={25} />}
           </Link>
         )
       })}
       <span
-        className={`${Style} absolute left-[12%] top-[78%] -z-10 h-[2px] w-[9.2%] origin-center rounded-full bg-secondary_dark transition-all duration-300 `}
+        className={`${Style} absolute left-[12%] top-[82%] -z-10 h-[2px] w-[9.2%] origin-center rounded-full bg-primary_dark transition-all duration-500 `}
       ></span>
     </div>
   )

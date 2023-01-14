@@ -1,9 +1,8 @@
-import { motion, useScroll } from "framer-motion"
 import Head from "next/head"
+import Image from "next/image"
+import Heading from "../Components/UI/Heading"
 
 export default function Home() {
-  const { scrollYProgress } = useScroll()
-
   return (
     <>
       <Head>
@@ -12,11 +11,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.png" />
       </Head>
-      <main className="container text-center p-2">
-        {/* <motion.div
-          className="fixed top-0 left-0 right-0 origin-left bg-primary_dark h-[2px]"
-          style={{ scaleX: scrollYProgress }}
-        /> */}
+
+      <main className="container">
+        <div className="relative flex flex-col justify-center items-center mt-6 lg:mt-16 ">
+          <Image
+            src={"/PC.png"}
+            width={450}
+            height={450}
+            alt="image"
+            className="drop-shadow-2xl animate-HorizentalMove"
+          />
+
+          <Heading title="wellcome to my" highLightText="Portfolio" />
+        </div>
       </main>
     </>
   )

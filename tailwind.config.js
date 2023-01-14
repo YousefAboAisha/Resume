@@ -9,16 +9,25 @@ module.exports = {
     extend: {
       colors: {
         text: "#000814",
-        primary_dark: "#001d3d",
+        primary_dark: "#FB2576",
         primary_light: "#003566",
-        secondary_dark: "#ffc300",
-        secondary_light: "#ffd60a",
+        secondary_dark: "#3F0071",
+        secondary_light: "#3F0071",
       },
       fontFamily: {
         primary: ["var(--font-ibm)"],
         secondary: ["var(--font-cairo)"],
       },
+      keyframes: {
+        HorizentalMove: {
+          "0%, 100%": { transform: "translateY(10px)", opacity: 1 },
+          "50%": { transform: "translateY(-10px)", opacity: 0.8 },
+        },
+      },
+      animation: {
+        HorizentalMove: "HorizentalMove 2.5s linear infinite",
+      },
     },
   },
   plugins: [],
-};
+}

@@ -2,19 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .abs-center {
-    @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]
+    @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%];
   }
 
   .container {
-    @apply w-11/12 lg:w-10/12 mx-auto
+    @apply w-11/12 lg:w-10/12 mx-auto;
+  }
+
+  .section {
+    @apply relative w-full mt-24 mx-auto;
   }
 
   html {
-  @apply text-white
-}
+    @apply text-white;
+  }
 }
 
 * {

@@ -1,2 +1,2 @@
-{ "css.lint.unknownAtRules": "ignore", "[css]": { "editor.defaultFormatter": "bradlc.vscode-tailwindcss" } }
+{ "css.lint.unknownAtRules": "ignore", "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" } }
 

@@ -21,7 +21,7 @@ export const Skills = [
     icon: javascript,
   },
   {
-    title: "React",
+    title: "React JS",
     icon: react,
   },
   {
@@ -29,7 +29,7 @@ export const Skills = [
     icon: typescript,
   },
   {
-    title: "Tailwind",
+    title: "Tailwind CSS",
     icon: tailwind,
   },
   {

@@ -1,8 +1,10 @@
 import Head from "next/head"
 import Image from "next/image"
+import Button from "../Components/UI/Button"
 import Heading from "../Components/UI/Heading"
 import SkillCard from "../Components/UI/SkillCard"
 import { Skills } from "../Data/Skills"
+import { RxDownload } from "react-icons/rx"
 
 export default function Home() {
   return (
@@ -33,6 +35,12 @@ export default function Home() {
           <Heading title="wellcome to my" highLightText="Portfolio" />
         </div>
 
+        <div className="section grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {Skills.map((elem, index) => {
+            return <SkillCard key={index} icon={elem.icon} title={elem.title} />
+          })}
+        </div>
+
         <div className="section grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="flex flex-col items-start justify-center">
             <Heading
@@ -50,7 +58,13 @@ export default function Home() {
               looking to start a business in the real estate industry, you need
               to set up your own company first.
             </p>
+            <Button
+              title="Donwload CV"
+              style="mt-4 w-fit h-[48px] p-5"
+              icon={<RxDownload size={22} />}
+            />
           </div>
+
           <div className="flex justify-center">
             <Image
               src={"/CV.png"}
@@ -60,11 +74,6 @@ export default function Home() {
               className="drop-shadow-2xl animate-HorizentalMove z-10"
             />
           </div>
-        </div>
-        <div className="section grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {Skills.map((elem, index) => {
-            return <SkillCard key={index} icon={elem.icon} title={elem.title} />
-          })}
         </div>
       </main>
     </>

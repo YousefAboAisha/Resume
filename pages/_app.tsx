@@ -1,10 +1,7 @@
 import type { AppProps } from "next/app"
 import { IBM_Plex_Sans_Arabic, Cairo } from "@next/font/google"
 import "../styles/globals.css"
-import { motion, useScroll } from "framer-motion"
 import Layout from "../Layout/Layout"
-import Head from "next/head"
-import { useRouter } from "next/router"
 
 const ibm = IBM_Plex_Sans_Arabic({
   weight: ["100", "400", "700"],

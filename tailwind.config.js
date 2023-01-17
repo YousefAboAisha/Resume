@@ -21,16 +21,21 @@ module.exports = {
       keyframes: {
         HorizentalMove: {
           "0%, 100%": { transform: "translateY(10px)", opacity: 1 },
-          "50%": { transform: "translateY(-10px)", opacity: 0.8 },
+          "50%": { transform: "translateY(-10px)", opacity: 1 },
         },
-        shadowPulse: {
+        ShadowPulse: {
           "0%, 100%": { boxShadow: "7px 12px #88888890", opacity: 1 },
           "50%": { opacity: 0.9 },
+        },
+        ScaleEffect: {
+          "0%, 100%": { scale: "1", opacity: 1 },
+          "50%": { scale: "1.1", opacity: 0.5 },
         },
       },
       animation: {
         HorizentalMove: "HorizentalMove 2.5s linear infinite",
-        shadowPulse: "shadowPulse 2.5s linear infinite",
+        ShadowPulse: "ShadowPulse 2.5s linear infinite",
+        ScaleEffect: "ScaleEffect 4s linear infinite",
       },
     },
   },

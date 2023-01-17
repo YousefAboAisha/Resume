@@ -32,7 +32,27 @@ export default function Home() {
             <span className="absolute bottom-[10%] right-[5%] w-[25vh] h-[25vh] rounded-full bg-secondary_dark blur-[100px] mix-blend-plus-lighter"></span>
           </div>
 
-          <Heading title="wellcome to my" highLightText="Portfolio" />
+          <Image
+            src={"/rocket.png"}
+            width={250}
+            height={250}
+            alt="Rocket Image"
+            className="absolute w-[20vw] lg:bottom-[10%] bottom-[20%] right-[0] lg:right-[5%] "
+          />
+
+          <Image
+            src={"/message.png"}
+            width={200}
+            height={200}
+            alt="Message Image"
+            className="absolute w-[15vw] lg:top-[10%] top-[15%] -left-[5%] lg:left-[5%] "
+          />
+
+          <Heading
+            title="wellcome to my"
+            highLightText="Portfolio"
+            additionalStyles="mt-4"
+          />
         </div>
 
         <div className="section grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

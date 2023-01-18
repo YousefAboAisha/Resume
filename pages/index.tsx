@@ -91,9 +91,16 @@ export default function Home() {
               width={500}
               height={500}
               alt="CV Image"
-              className="drop-shadow-2xl animate-HorizentalMove z-10"
+              className="drop-shadow-2xl animate-HorizentalMove z-10 "
             />
           </div>
+        </div>
+
+        <div className="section bg-hero-pattern w-full h-[40vh] bg-fixed bg-cover rounded-lg flex flex-col justify-center p-5 ">
+          <Heading
+            title="Future is yours!"
+            details="Technology is not just about machines, it's about service."
+          />
         </div>
       </main>
     </>

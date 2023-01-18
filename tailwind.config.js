@@ -29,13 +29,16 @@ module.exports = {
         },
         ScaleEffect: {
           "0%, 100%": { scale: "1", opacity: 1 },
-          "50%": { scale: "1.1", opacity: 0.5 },
+          "50%": { scale: "1.01", opacity: 0.9 },
         },
       },
       animation: {
         HorizentalMove: "HorizentalMove 2.5s linear infinite",
         ShadowPulse: "ShadowPulse 2.5s linear infinite",
         ScaleEffect: "ScaleEffect 4s linear infinite",
+      },
+      backgroundImage: {
+        "hero-pattern": "url('/technology.jpg')",
       },
     },
   },

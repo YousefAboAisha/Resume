@@ -3,16 +3,24 @@ type InputProps = {
   // handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   placeholder: string
   style?: string
+  icon?: JSX.Element
 } & React.ComponentProps<"input">
 
-const Input = ({ value, placeholder, style, ...rest }: InputProps) => {
+const Input = ({ value, placeholder, style, icon, ...rest }: InputProps) => {
   return (
-    <input
-      value={value}
-      {...rest}
-      className={`h-[56px] px-3 border rounded-[8px] outline-none duration-300 bg-[#F5F5F5] w-full focus:invalid:bg-[#ffb6b68c] focus:invalid:border-red-500 focus:valid:border-green-500 disabled:cursor-not-allowed ${style}`}
-      placeholder={placeholder}
-    />
+    <div className="relative">
+      <div className="absolute flex justify-center p-2 rounded-l-md items-center left-1 top-[50%] translate-y-[-50%] h-full border-none outline-none">
+        {icon}
+      </div>
+
+      <input
+        value={value}
+        {...rest}
+        className={`h-[56px] pl-10 border rounded-[8px] outline-none duration-300 w-full focus:invalid:border-red-500 focus:valid:border-green-500 
+      disabled:cursor-not-allowed bg-transparent ${style}`}
+        placeholder={placeholder}
+      />
+    </div>
   )
 }
 

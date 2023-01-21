@@ -1,25 +1,11 @@
 import Head from "next/head"
-import Image from "next/image"
-import Button from "../Components/UI/Button"
-import Heading from "../Components/UI/Heading"
-import SkillCard from "../Components/UI/SkillCard"
-import { Skills } from "../Data/Skills"
-import { RxDownload } from "react-icons/rx"
-import { IoIosSend } from "react-icons/io"
-import { BiUser } from "react-icons/bi"
-import { MdOutlineEmail } from "react-icons/md"
-import Input from "../Components/UI/Input"
-import { useState } from "react"
-import TextArea from "../Components/UI/TextArea"
+import Landing from "../Containers/Home/landing"
+import SkillsCards from "../Containers/Home/SkillsCards"
+import CV from "../Containers/Home/CV"
+import Hero from "../Containers/Home/Hero"
+import Contact from "../Containers/Home/Contact"
 
 export default function Home() {
-  const [FormData, setFormData] = useState({
-    FirstName: "",
-    LastName: "",
-    Email: "",
-    Message: "",
-  })
-
   return (
     <>
       <Head>
@@ -30,175 +16,15 @@ export default function Home() {
       </Head>
 
       <main className="container mb-24">
-        <div className="relative flex flex-col justify-center items-center mt-6 lg:mt-16 ">
-          <div className="relative w-full flex justify-center">
-            <Image
-              src={"/landing.png"}
-              width={450}
-              height={450}
-              alt="Computer Image"
-              className="drop-shadow-2xl animate-HorizentalMove z-10 "
-            />
+        <Landing />
 
-            <span className="absolute top-[10%] left-[5%] w-[25vh] h-[25vh] rounded-full bg-primary_dark blur-[100px] mix-blend-plus-lighter"></span>
+        <SkillsCards />
 
-            <span className="absolute bottom-[10%] right-[5%] w-[25vh] h-[25vh] rounded-full bg-secondary_light blur-[100px] mix-blend-plus-lighter"></span>
-          </div>
+        <CV />
 
-          <Image
-            src={"/rocket.png"}
-            width={250}
-            height={250}
-            alt="Rocket Image"
-            className="absolute w-[20vw] lg:bottom-[10%] bottom-[20%] right-[0] lg:right-[5%] "
-          />
+        <Hero />
 
-          <Image
-            src={"/message.png"}
-            width={200}
-            height={200}
-            alt="Message Image"
-            className="absolute w-[15vw] lg:top-[10%] top-[15%] -left-[5%] lg:left-[5%] "
-          />
-
-          <Heading
-            title="wellcome to my"
-            highLightText="Portfolio"
-            additionalStyles="mt-4"
-          />
-        </div>
-
-        <div className="section grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {Skills.map((elem, index) => {
-            return <SkillCard key={index} icon={elem.icon} title={elem.title} />
-          })}
-        </div>
-
-        <div className="section grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="flex flex-col items-start justify-center">
-            <Heading
-              title=""
-              highLightText="who Am I"
-              additionalStyles="mx-0 mb-4"
-            />
-
-            <p>
-              Every person is looking to build a life on their own needs an
-              apartment to live on their own terms,If you are looking to start a
-              business in the real estate industry, you need to set up your own
-              company first, Every person is looking to build a life on their
-              own needs an apartment to live on their own terms,If you are
-              looking to start a business in the real estate industry, you need
-              to set up your own company first.
-            </p>
-            <Button
-              title="Donwload CV"
-              style="mt-4 w-fit h-[48px] p-5 group"
-              icon={
-                <RxDownload size={23} className="group-hover:animate-pulse" />
-              }
-              hasLink={true}
-            />
-          </div>
-
-          <div className="flex justify-center">
-            <Image
-              src={"/CV.png"}
-              width={500}
-              height={500}
-              alt="CV Image"
-              className="drop-shadow-2xl animate-HorizentalMove z-10 "
-            />
-          </div>
-        </div>
-
-        <div className="section bg-hero-pattern w-full h-[40vh] bg-fixed lg:bg-cover bg-center rounded-lg flex flex-col justify-center p-5 ">
-          <Heading
-            title="Future is yours!"
-            details="Technology is not just about machines, it's about service."
-          />
-        </div>
-
-        <div className="section grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="flex flex-col items-start justify-center">
-            <Heading
-              title="Stay on touch"
-              highLightText="with me "
-              additionalStyles="mx-0 mb-4"
-            />
-
-            <form className="relative flex flex-col gap-4 mt-2 w-full">
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input
-                  placeholder="First name"
-                  value={FormData.FirstName}
-                  onChange={(e) =>
-                    setFormData({
-                      ...FormData,
-                      FirstName: e.target.value,
-                    })
-                  }
-                  type="text"
-                  icon={<BiUser size={23} />}
-                />
-                <Input
-                  placeholder="Last name"
-                  value={FormData.LastName}
-                  onChange={(e) =>
-                    setFormData({
-                      ...FormData,
-                      LastName: e.target.value,
-                    })
-                  }
-                  type="text"
-                  icon={<BiUser size={23} />}
-                />
-              </div>
-              <Input
-                placeholder="Email"
-                value={FormData.Email}
-                onChange={(e) =>
-                  setFormData({
-                    ...FormData,
-                    Email: e.target.value,
-                  })
-                }
-                type="email"
-                icon={<MdOutlineEmail size={23} />}
-              />
-
-              <TextArea
-                placeholder="Enter Your Message..."
-                value={FormData.Message}
-                onChange={(e) =>
-                  setFormData({
-                    ...FormData,
-                    Message: e.target.value,
-                  })
-                }
-                maxLength={100}
-              />
-
-              <Button
-                title="Submit"
-                style="mt-2 w-5/12 h-[48px] p-5 "
-                icon={<IoIosSend size={23} />}
-                hasLink={false}
-                type="submit"
-              />
-            </form>
-          </div>
-
-          <div className="flex justify-center">
-            <Image
-              src={"/support.png"}
-              width={500}
-              height={500}
-              alt="CV Image"
-              className="drop-shadow-2xl animate-HorizentalMove"
-            />
-          </div>
-        </div>
+        <Contact />
       </main>
     </>
   )

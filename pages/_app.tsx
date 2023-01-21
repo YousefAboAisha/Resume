@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app"
-import { IBM_Plex_Sans_Arabic, Cairo } from "@next/font/google"
+import { IBM_Plex_Sans_Arabic, Cairo, Open_Sans } from "@next/font/google"
 import "../styles/globals.css"
 import Layout from "../Layout/Layout"
 
@@ -19,9 +19,17 @@ const cairo = Cairo({
   display: "swap",
 })
 
+const OpenSans = Open_Sans({
+  weight: ["300", "500", "700"],
+  style: ["normal"],
+  subsets: ["latin"],
+  variable: "--font-opensans",
+  display: "swap",
+})
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${ibm.variable} ${cairo.variable} min-h-[1400px]`}>
+    <div className={`${OpenSans.variable} ${cairo.variable} min-h-[1400px]`}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

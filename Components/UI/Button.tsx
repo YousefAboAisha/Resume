@@ -11,7 +11,7 @@ const Button = ({ title, icon, hasLink, style, ...rest }: ButtonProps) => {
   return (
     <button
       {...rest}
-      className={`relative uppercase bg-primary_dark text-white w-full py-[10px] outline-none flex justify-center gap-3 items-center disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer transition shadow-sm rounded-sm ${style} rounded-md border-transparent border-[1px] hover:bg-transparent hover:border-primary_dark hover:border-[1px] duration-500`}
+      className={`relative uppercase bg-primary_dark text-white w-full py-[10px] outline-none flex justify-center gap-3 items-center disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer transition shadow-sm rounded-sm ${style} rounded-md border-transparent border-[1px] hover:bg-primary_light hover:border-[1px] duration-500`}
     >
       {hasLink ? (
         <Link

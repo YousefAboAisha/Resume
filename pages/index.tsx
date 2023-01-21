@@ -42,7 +42,7 @@ export default function Home() {
 
             <span className="absolute top-[10%] left-[5%] w-[25vh] h-[25vh] rounded-full bg-primary_dark blur-[100px] mix-blend-plus-lighter"></span>
 
-            <span className="absolute bottom-[10%] right-[5%] w-[25vh] h-[25vh] rounded-full bg-secondary_dark blur-[100px] mix-blend-plus-lighter"></span>
+            <span className="absolute bottom-[10%] right-[5%] w-[25vh] h-[25vh] rounded-full bg-secondary_light blur-[100px] mix-blend-plus-lighter"></span>
           </div>
 
           <Image
@@ -93,8 +93,10 @@ export default function Home() {
             </p>
             <Button
               title="Donwload CV"
-              style="mt-4 w-fit h-[48px] p-5"
-              icon={<RxDownload size={23} />}
+              style="mt-4 w-fit h-[48px] p-5 group"
+              icon={
+                <RxDownload size={23} className="group-hover:animate-pulse" />
+              }
               hasLink={true}
             />
           </div>
@@ -179,7 +181,7 @@ export default function Home() {
 
               <Button
                 title="Submit"
-                style="mt-2 w-5/12 h-[48px] p-5"
+                style="mt-2 w-5/12 h-[48px] p-5 "
                 icon={<IoIosSend size={23} />}
                 hasLink={false}
                 type="submit"

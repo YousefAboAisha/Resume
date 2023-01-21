@@ -24,7 +24,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--font-ibm);
+  font-family: var(--font-opensans);
 }
 
 li {
@@ -35,7 +35,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #111;
+  background-color: #000;
 }
 
 a {

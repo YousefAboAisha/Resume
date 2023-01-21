@@ -10,11 +10,12 @@ module.exports = {
       colors: {
         text: "#000814",
         primary_dark: "#FB2576",
-        primary_light: "#003566",
-        secondary_dark: "#181818",
+        primary_light: "#ff3380",
+        secondary_dark: "#222",
+        secondary_light: "#003566",
       },
       fontFamily: {
-        primary: ["var(--font-ibm)"],
+        primary: ["var(--font-opensans)"],
         secondary: ["var(--font-cairo)"],
       },
       keyframes: {
@@ -23,7 +24,7 @@ module.exports = {
           "50%": { transform: "translateY(-5px) scale(1.01)", opacity: 1 },
         },
         ShadowPulse: {
-          "0%, 100%": { boxShadow: "7px 12px #88888890", opacity: 1 },
+          "0%, 100%": { boxShadow: "7px 12px #222222", opacity: 1 },
           "50%": { opacity: 0.9 },
         },
         ScaleEffect: {

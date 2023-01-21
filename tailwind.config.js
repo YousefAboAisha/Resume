@@ -19,8 +19,8 @@ module.exports = {
       },
       keyframes: {
         HorizentalMove: {
-          "0%, 100%": { transform: "translateY(10px)", opacity: 1 },
-          "50%": { transform: "translateY(-10px)", opacity: 1 },
+          "0%, 100%": { transform: "translateY(5px) scale(1)", opacity: 1 },
+          "50%": { transform: "translateY(-5px) scale(1.01)", opacity: 1 },
         },
         ShadowPulse: {
           "0%, 100%": { boxShadow: "7px 12px #88888890", opacity: 1 },
@@ -32,7 +32,7 @@ module.exports = {
         },
       },
       animation: {
-        HorizentalMove: "HorizentalMove 2.5s linear infinite",
+        HorizentalMove: "HorizentalMove 3.5s linear infinite",
         ShadowPulse: "ShadowPulse 2.5s linear infinite",
         ScaleEffect: "ScaleEffect 4s linear infinite",
       },

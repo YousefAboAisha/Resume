@@ -16,9 +16,10 @@ const Input = ({ value, placeholder, style, icon, ...rest }: InputProps) => {
       <input
         value={value}
         {...rest}
-        className={`h-[56px] pl-10 border rounded-[8px] outline-none duration-300 w-full focus:invalid:border-red-500 focus:valid:border-green-500 
+        className={`h-[56px] pl-10 border rounded-[8px] outline-none duration-300 w-full focus:invalid:bg- focus:valid:border-primary_dark focus:border-primary_dark
       disabled:cursor-not-allowed bg-transparent ${style}`}
         placeholder={placeholder}
+        required
       />
     </div>
   )

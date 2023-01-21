@@ -11,8 +11,7 @@ module.exports = {
         text: "#000814",
         primary_dark: "#FB2576",
         primary_light: "#003566",
-        secondary_dark: "#3F0071",
-        secondary_light: "#3F0071",
+        secondary_dark: "#181818",
       },
       fontFamily: {
         primary: ["var(--font-ibm)"],

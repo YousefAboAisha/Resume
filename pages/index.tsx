@@ -95,6 +95,7 @@ export default function Home() {
               title="Donwload CV"
               style="mt-4 w-fit h-[48px] p-5"
               icon={<RxDownload size={23} />}
+              hasLink={true}
             />
           </div>
 
@@ -109,7 +110,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="section bg-hero-pattern w-full h-[40vh] bg-fixed bg-cover rounded-lg flex flex-col justify-center p-5 ">
+        <div className="section bg-hero-pattern w-full h-[40vh] bg-fixed lg:bg-cover bg-center rounded-lg flex flex-col justify-center p-5 ">
           <Heading
             title="Future is yours!"
             details="Technology is not just about machines, it's about service."
@@ -178,8 +179,10 @@ export default function Home() {
 
               <Button
                 title="Submit"
-                style="mt-2 w-full h-[48px] p-5"
+                style="mt-2 w-5/12 h-[48px] p-5"
                 icon={<IoIosSend size={23} />}
+                hasLink={false}
+                type="submit"
               />
             </form>
           </div>

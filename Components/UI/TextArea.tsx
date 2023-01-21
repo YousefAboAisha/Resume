@@ -10,7 +10,7 @@ const TextArea = ({ value, placeholder, style, ...rest }: TextAreaProps) => {
     <textarea
       value={value}
       {...rest}
-      className={`px-3 pt-3 border rounded-[8px] outline-none duration-300 w-full focus:invalid:border-red-500 focus:valid:border-green-500 
+      className={`px-3 pt-3 border rounded-[8px] outline-none duration-300 w-full focus:valid:border-primary_dark focus:border-primary_dark
       disabled:cursor-not-allowed bg-transparent resize-none ${style}`}
       placeholder={placeholder}
       rows={5}

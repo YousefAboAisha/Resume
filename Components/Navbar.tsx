@@ -48,13 +48,14 @@ const Navbar = () => {
               elem.title
             } border-r border-[#dddddd44] last-of-type:border-r-0 justify-center items-center h-full w-full duration-300 cursor-pointer 
             ${router.pathname == `${elem.href}` ? "text-primary_dark" : ""} `}
+            title={elem.title}
           >
             {<elem.icon size={25} />}
           </Link>
         )
       })}
       <span
-        className={`${Style} absolute left-[12%] top-[83%] -z-10 h-[2px] w-[9.2%] origin-center rounded-full bg-primary_dark transition-all duration-500 `}
+        className={`${Style} absolute left-[12%] top-[83%] -z-10 h-[2px] w-[9.2%] origin-center rounded-full bg-primary_dark transition-all duration-500 outline-none`}
       ></span>
     </div>
   )

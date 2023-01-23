@@ -16,8 +16,24 @@
   }
 
   html {
-    @apply text-white;
+    @apply text-[#EEEEEE];
   }
+}
+
+::-webkit-scrollbar {
+  height: 0;
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #222222;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fb2576;
+  border-radius: 50px;
 }
 
 * {

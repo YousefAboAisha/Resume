@@ -3,6 +3,7 @@ import { RxDownload } from "react-icons/rx"
 import Button from "../../Components/UI/Button"
 import CustomImage from "../../Components/UI/CustomImage"
 import Heading from "../../Components/UI/Heading"
+import LinkButton from "../../Components/UI/LinkButton"
 
 const CV = () => {
   return (
@@ -23,11 +24,12 @@ const CV = () => {
           start a business in the real estate industry, you need to set up your
           own company first.
         </p>
-        <Button
+
+        <LinkButton
           title="Donwload CV"
           style="mt-4 w-fit h-[48px] p-5 group"
           icon={<RxDownload size={23} className="group-hover:animate-pulse" />}
-          hasLink={true}
+          href={"/resume.pdf"}
         />
       </div>
 

@@ -1,5 +1,4 @@
-import { AiOutlineHome } from "react-icons/ai"
-import { MdPersonOutline, MdOutlineMail } from "react-icons/md"
+import { AiOutlineHome, AiOutlineMail, AiOutlineLaptop } from "react-icons/ai"
 
 export const Routes = [
   {
@@ -8,13 +7,13 @@ export const Routes = [
     icon: AiOutlineHome,
   },
   {
-    title: "About",
-    href: "/about",
-    icon: MdPersonOutline,
+    title: "Projects",
+    href: "/projects",
+    icon: AiOutlineLaptop,
   },
   {
     title: "Contact",
     href: "/contact",
-    icon: MdOutlineMail,
+    icon: AiOutlineMail,
   },
 ]

@@ -16,7 +16,7 @@ const Navbar = () => {
         setStyle("left-[12%]")
         break
 
-      case "/about":
+      case "/projects":
         setStyle("left-[45%]")
         break
 

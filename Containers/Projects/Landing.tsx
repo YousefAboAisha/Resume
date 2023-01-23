@@ -14,14 +14,14 @@ const Landing = () => {
           className="drop-shadow-2xl animate-HorizentalMove z-10 "
         />
 
-        <span className="absolute top-[10%] left-[5%] w-[25vh] h-[25vh] rounded-full bg-primary_dark blur-[100px] mix-blend-plus-lighter"></span>
+        <span className="absolute top-[5%] left-[10%] w-[25vh] h-[25vh] rounded-full bg-primary_dark blur-[100px] mix-blend-plus-lighter"></span>
 
-        <span className="absolute bottom-[10%] right-[5%] w-[25vh] h-[25vh] rounded-full bg-secondary_light blur-[100px] mix-blend-plus-lighter"></span>
+        <span className="absolute bottom-[5%] right-[10%] w-[25vh] h-[25vh] rounded-full bg-secondary_light blur-[100px] mix-blend-plus-lighter"></span>
       </div>
 
       <Heading
-        title="Browse my"
-        highLightText="Recent projects"
+        title="Watch my Recent"
+        highLightText=" projects"
         additionalStyles="mt-4"
       />
     </div>

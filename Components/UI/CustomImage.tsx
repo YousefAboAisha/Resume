@@ -24,7 +24,7 @@ const CustomImage = ({
       width={width}
       height={height}
       alt={alt}
-      onError={() => setImg("./notFound.jpg")}
+      onError={() => setImg("/notFound.jpg")}
       loading="lazy"
       className={className}
     />

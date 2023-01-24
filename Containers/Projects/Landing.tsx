@@ -7,11 +7,11 @@ const Landing = () => {
     <div className="relative flex flex-col justify-center items-center mt-6 lg:mt-16 ">
       <div className="relative w-full flex justify-center">
         <CustomImage
-          src={"/ai.png"}
-          width={450}
-          height={450}
+          src={"/projects.png"}
+          width={650}
+          height={650}
           alt="About Image"
-          className="drop-shadow-2xl animate-HorizentalMove z-10 "
+          className="animate-HorizentalMove z-10 "
         />
 
         <span className="absolute top-[5%] left-[10%] w-[25vh] h-[25vh] rounded-full bg-primary_dark blur-[100px] mix-blend-plus-lighter"></span>
@@ -21,7 +21,7 @@ const Landing = () => {
 
       <Heading
         title="Watch my Recent"
-        highLightText=" projects"
+        highLightText="projects"
         additionalStyles="mt-4"
       />
     </div>

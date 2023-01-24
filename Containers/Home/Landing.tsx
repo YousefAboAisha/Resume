@@ -11,7 +11,7 @@ const Landing = () => {
           width={450}
           height={450}
           alt="Computer Image"
-          className="drop-shadow-2xl animate-HorizentalMove z-10 "
+          className="animate-HorizentalMove z-10 "
         />
 
         <span className="absolute top-[10%] left-[5%] w-[25vh] h-[25vh] rounded-full bg-primary_dark blur-[100px] mix-blend-plus-lighter"></span>

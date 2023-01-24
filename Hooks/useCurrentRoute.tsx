@@ -5,18 +5,16 @@ const useCurrentRoute = () => {
   const [Title, setTitle] = useState("")
   const route = useRouter()
 
-  console.log(route)
-
   useEffect(() => {
     if (route.pathname == "/") {
       setTitle("Home")
     } else {
-      let title = route.pathname.slice(1)
+      let title = route.pathname.slice(1).toString()
       setTitle(title)
     }
-  }, [route])
+  }, [route.pathname])
 
-  return Title
+  return `Portfolio | ${Title}`
 }
 
 export default useCurrentRoute

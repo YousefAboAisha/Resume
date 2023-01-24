@@ -89,7 +89,7 @@ const Contact = () => {
 
       <div className="flex justify-center">
         <CustomImage
-          src={"/support31.png"}
+          src={"/support.png"}
           width={450}
           height={450}
           alt="CV Image"

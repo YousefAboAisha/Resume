@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
   ) : (
     <>
       <Navbar />
-      <main className="container">{children}</main>
+      <main className="container bg-background">{children}</main>
       <Socialbar />
     </>
   )

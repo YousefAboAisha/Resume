@@ -1,6 +1,6 @@
 import img1 from "../public/Sites/landing.svg"
 import img2 from "../public/Sites/youtube.svg"
-import img3 from "../public/Sites/review.svg"
+import img3 from "../public/Sites/food.svg"
 import img4 from "../public/Sites/movie.svg"
 import img5 from "../public/Sites/weather.svg"
 import img6 from "../public/Sites/appartement.svg"
@@ -23,23 +23,23 @@ export const Sites = [
     github_link: "https://github.com/YousefAboAisha/Youtube-clone",
   },
   {
-    title: "Rate App",
+    title: "Inno store",
     href: img3,
-    live_link: "https://yousefaboaisha.github.io/Rate-App/",
-    tags: ["HTML", "CSS", "JS", "BOOTSTRAB", "REACT.JS"],
-    alt: "Rate app",
-    github_link: "https://github.com/YousefAboAisha/RateApp",
+    live_link: "https://benevolent-tartufo-f71b4a.netlify.app/",
+    tags: ["HTML", "CSS", "JS", "REACT.JS", "firebase"],
+    alt: "Inno store",
+    github_link: "https://github.com/YousefAboAisha/food-shop",
   },
   {
-    title: "Movies App",
+    title: "HULU",
     href: img4,
-    live_link: "https://yousefaboaisha.github.io/Movies-App/",
-    tags: ["HTML", "CSS", "JS", "JQUERY", "BOOTSTRAB", "REACT.JS"],
-    alt: "Movies App",
-    github_link: "https://github.com/YousefAboAisha/Movies-App",
+    live_link: "https://hulu-eight-iota.vercel.app/trending?page=1",
+    tags: ["HTML", "CSS", "JS", "NEXT JS", "Tailwind CSS", "TMDB API"],
+    alt: "HULU",
+    github_link: "https://github.com/YousefAboAisha/Hulu",
   },
   {
-    title: "Weather App",
+    title: "Raseel",
     href: img5,
     live_link: "https://yousefaboaisha.github.io/Weather-App/",
     tags: [
@@ -55,7 +55,7 @@ export const Sites = [
     github_link: "https://github.com/YousefAboAisha/Weather-App",
   },
   {
-    title: "Appartments App",
+    title: "Real Estates App",
     href: img6,
     live_link: "https://yousefaboaisha.github.io/Houses-App/",
     tags: ["HTML", "CSS", "JS", "Firebase", "BOOTSTRAB", "REACT.JS"],

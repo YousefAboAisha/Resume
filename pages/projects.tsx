@@ -4,7 +4,7 @@ import ProjectsList from "../Containers/Projects/ProjectsList"
 
 const about = () => {
   return (
-    <main className="container mb-24">
+    <main className="mb-24">
       <Landing />
 
       <ProjectsList />

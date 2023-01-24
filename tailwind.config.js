@@ -9,16 +9,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        text: "#000814",
+        background: "#001",
         primary_dark: "#FB2576",
         primary_light: "#ff3380",
         secondary_dark: "#222",
         secondary_light: "#003566",
       },
+
       fontFamily: {
         primary: ["var(--font-opensans)"],
         secondary: ["var(--font-cairo)"],
       },
+
+      borderColor: {
+        light: "#dddddd1a",
+      },
+
       keyframes: {
         HorizentalMove: {
           "0%, 100%": { transform: "translateY(5px) scale(1)", opacity: 1 },

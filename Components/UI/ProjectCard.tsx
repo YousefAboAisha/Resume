@@ -1,10 +1,11 @@
 import Image, { StaticImageData } from "next/image"
 import { FaEye, FaGithub } from "react-icons/fa"
+import CustomImage from "./CustomImage"
 import LinkButton from "./LinkButton"
 import Tag from "./Tag"
 
 type ProjectCardProps = {
-  src: StaticImageData
+  src: string
   alt: string
   title: string
   tags: string[]
@@ -26,7 +27,7 @@ const ProjectCard = ({
      rounded-md shadow-lg"
     >
       <div className="w-full border-b border-[#dddddd44] max-h-[200px] h-[200px] overflow-hidden duration-300">
-        <Image
+        <CustomImage
           src={src}
           width={200}
           height={200}
@@ -38,7 +39,7 @@ const ProjectCard = ({
       <div className="flex flex-col gap-2 p-3 bg-secondary_dark">
         <h2 className="text-xl uppercase font-medium">{title}</h2>
 
-        <div className="flex flex-row gap-1 flex-wrap h-[70px] overflow-scroll">
+        <div className="flex flex-row gap-1 flex-wrap h-[70px] overflow-auto">
           {tags.map((elem, index) => {
             return <Tag key={index} title={elem} />
           })}

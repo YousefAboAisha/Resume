@@ -1,6 +1,7 @@
 import React from "react"
 import Navbar from "../Components/Navbar"
 import Socialbar from "../Components/Socialbar"
+import ThemeToggler from "../Components/ThemeToggler"
 import Spinner from "../Components/UI/Spinner"
 import useLoading from "../Hooks/useLoading"
 
@@ -15,8 +16,11 @@ const Layout = ({ children }: LayoutProps) => {
     <Spinner />
   ) : (
     <>
+      <ThemeToggler />
       <Navbar />
-      <main className="container bg-background_dark">{children}</main>
+      <body>
+        <main className="container bg-transparent">{children}</main>
+      </body>
       <Socialbar />
     </>
   )

@@ -41,7 +41,7 @@ const Select = ({ title, options, icon, style, ...rest }: SelectProps) => {
           return (
             <option
               key={elem.id}
-              className="bg-secondary p-2"
+              className="bg-background p-2"
               value={elem.id}
               onChange={() => setIsActive(false)}
             >

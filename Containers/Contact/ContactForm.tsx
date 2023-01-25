@@ -18,8 +18,8 @@ const ContactForm = () => {
     FirstName: "",
     LastName: "",
     Email: "",
-    projectType: "",
-    messageTitle: "",
+    ProjectType: "",
+    MessageTitle: "",
     Message: "",
   })
 
@@ -31,7 +31,7 @@ const ContactForm = () => {
           width={100}
           height={100}
           alt="Pattern image"
-          className="abs-center w-full h-full blur-2xl opacity-30 z-0 rotate-45"
+          className="abs-center w-full h-full blur-2xl opacity-30 -z-10 rotate-45"
         />
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -77,11 +77,11 @@ const ContactForm = () => {
         <Select
           title="Select project type"
           options={ProjectTypes}
-          value={FormData.projectType}
+          value={FormData.ProjectType}
           onChange={(e) =>
             setFormData({
               ...FormData,
-              projectType: e.target.value,
+              ProjectType: e.target.value,
             })
           }
           icon={<MdOutlineAccountTree size={23} />}
@@ -89,11 +89,11 @@ const ContactForm = () => {
 
         <Input
           placeholder="Message title"
-          value={FormData.messageTitle}
+          value={FormData.MessageTitle}
           onChange={(e) =>
             setFormData({
               ...FormData,
-              messageTitle: e.target.value,
+              MessageTitle: e.target.value,
             })
           }
           type="text"

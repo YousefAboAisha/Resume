@@ -7,6 +7,9 @@ module.exports = {
     "./Containers/**/*.{js,ts,jsx,tsx}",
     "./Layout/**/*.{js,ts,jsx,tsx}",
   ],
+
+  darkMode: "class",
+
   theme: {
     extend: {
       colors: {

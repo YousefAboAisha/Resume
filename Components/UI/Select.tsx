@@ -27,7 +27,7 @@ const Select = ({ title, options, icon, style, ...rest }: SelectProps) => {
         />
       </div>
       <select
-        className={`relative h-[56px] pl-12 border rounded-[8px] outline-none duration-300 w-full focus:valid:border-primary_dark focus:border-primary_dark
+        className={`relative h-[56px] pl-12 border rounded-[8px] outline-none duration-300 w-full focus:valid:border-primary focus:border-primary
       disabled:cursor-not-allowed bg-transparent cursor-pointer ${style}`}
         {...rest}
         onFocus={() => setIsActive(true)}
@@ -41,7 +41,7 @@ const Select = ({ title, options, icon, style, ...rest }: SelectProps) => {
           return (
             <option
               key={elem.id}
-              className="bg-secondary_dark p-2"
+              className="bg-secondary p-2"
               value={elem.id}
               onChange={() => setIsActive(false)}
             >

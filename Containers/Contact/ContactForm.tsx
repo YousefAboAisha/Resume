@@ -23,8 +23,6 @@ const ContactForm = () => {
     Message: "",
   })
 
-  console.log(FormData.projectType)
-
   return (
     <div className="relative flex flex-col items-center w-full overflow-hidden">
       <form className="relative flex flex-col gap-4 mt-24 w-10/12 md:w-8/12 lg:w-6/12 z-10">

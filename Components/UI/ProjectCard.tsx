@@ -36,7 +36,7 @@ const ProjectCard = ({
         />
       </div>
 
-      <div className="flex flex-col gap-2 p-3 bg-secondary_dark">
+      <div className="flex flex-col gap-2 p-3 bg-background">
         <h2 className="text-xl uppercase font-medium">{title}</h2>
 
         <div className="flex flex-row gap-1 flex-wrap h-[70px] overflow-auto">
@@ -56,7 +56,7 @@ const ProjectCard = ({
 
           <LinkButton
             title=""
-            style="w-1/6 rounded-xl bg-transparent border border-primary_dark hover:bg-transparent"
+            style="w-1/6 rounded-xl bg-transparent border border-primary hover:bg-transparent"
             icon={<FaEye size={22} />}
             href={liveLink}
             target="_blank"

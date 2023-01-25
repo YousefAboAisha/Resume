@@ -10,11 +10,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#001",
-        primary_dark: "#FB2576",
-        primary_light: "#ff3380",
-        secondary_dark: "#222",
-        secondary_light: "#003566",
+        // Dark Theme variables
+        background_dark: "#001",
+        text_dark: "#EEEEEE",
+
+        // Light theme variables
+        background_light: "#EEE",
+        text_light: "#001",
+
+        // Primary theme variables
+        primary: "#FB2576",
+        primary_hover: "#ff3380",
+
+        // Secondary theme variables
+        secondary: "#003566",
+
+        // Fixed backgroundColor in both themes
+        background: "#222",
       },
 
       fontFamily: {

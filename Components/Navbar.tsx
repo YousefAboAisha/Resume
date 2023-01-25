@@ -30,14 +30,14 @@ const Navbar = () => {
     setTransform()
   }, [path])
 
-  console.log(scrollDirection)
+  // console.log(scrollDirection)
 
   return (
     <div
       className={`fixed ${
         scrollDirection === "down" ? "lg:-top-12" : "lg:top-4"
       } flex items-center justify-center bottom-2 left-[50%] translate-x-[-50%] text-white outline-none 
-      w-6/12 md:w-3/12 h-12 rounded-3xl duration-500 bg-secondary_dark shadow-md z-50`}
+      w-6/12 md:w-3/12 h-12 rounded-3xl duration-500 bg-background shadow-md z-50`}
     >
       {Routes.map((elem, index) => {
         return (
@@ -47,7 +47,7 @@ const Navbar = () => {
             className={`flex peer/${
               elem.title
             } border-r border-light last-of-type:border-r-0 justify-center items-center h-full w-full duration-300 cursor-pointer 
-            ${router.pathname == `${elem.href}` ? "text-primary_dark" : ""} `}
+            ${router.pathname == `${elem.href}` ? "text-primary" : ""} `}
             title={elem.title}
           >
             {<elem.icon size={25} />}
@@ -55,7 +55,7 @@ const Navbar = () => {
         )
       })}
       <span
-        className={`${Style} absolute left-[12%] top-[83%] -z-10 h-[2px] w-[9.2%] origin-center rounded-full bg-primary_dark transition-all duration-500 outline-none`}
+        className={`${Style} absolute left-[12%] top-[83%] -z-10 h-[2px] w-[9.2%] origin-center rounded-full bg-primary transition-all duration-500 outline-none`}
       ></span>
     </div>
   )

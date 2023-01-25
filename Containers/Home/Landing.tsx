@@ -14,9 +14,9 @@ const Landing = () => {
           className="animate-HorizentalMove z-10 "
         />
 
-        <span className="absolute top-[10%] left-[5%] w-[25vh] h-[25vh] rounded-full bg-primary_dark blur-[100px] mix-blend-plus-lighter"></span>
+        <span className="absolute top-[10%] left-[5%] w-[25vh] h-[25vh] rounded-full bg-primary blur-[100px] mix-blend-plus-lighter"></span>
 
-        <span className="absolute bottom-[10%] right-[5%] w-[25vh] h-[25vh] rounded-full bg-secondary_light blur-[100px] mix-blend-plus-lighter"></span>
+        <span className="absolute bottom-[10%] right-[5%] w-[25vh] h-[25vh] rounded-full bg-secondary blur-[100px] mix-blend-plus-lighter"></span>
       </div>
 
       <CustomImage

@@ -67,3 +67,10 @@ h4,
 h5 {
   font-family: var(--font-opensans);
 } */
+
+select {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  padding-right: 5px;
+}

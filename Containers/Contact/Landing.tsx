@@ -8,8 +8,8 @@ const Landing = () => {
       <div className="relative w-full flex justify-center">
         <CustomImage
           src={"/contact.png"}
-          width={450}
-          height={450}
+          width={420}
+          height={400}
           alt="About Image"
           className="animate-HorizentalMove z-10 "
         />

@@ -13,10 +13,10 @@ const Landing = () => {
           alt="About Image"
           className="animate-HorizentalMove z-10 drop-shadow-md"
         />
-
+        {/* 
         <span className="absolute top-[5%] left-[15%] w-[50vh] h-[50vh] rounded-full bg-primary blur-[150px] "></span>
 
-        <span className="absolute bottom-[5%] right-[15%] w-[50vh] h-[50vh] rounded-full bg-secondary blur-[150px]"></span>
+        <span className="absolute bottom-[5%] right-[15%] w-[50vh] h-[50vh] rounded-full bg-secondary blur-[150px]"></span> */}
       </div>
 
       <Heading

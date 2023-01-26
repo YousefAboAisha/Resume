@@ -63,6 +63,8 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/technology.jpg')",
+        "main-pattern": "url('/mainPattern.svg')",
+        "main-pattern2": "url('/mainPattern2.svg')",
       },
     },
   },

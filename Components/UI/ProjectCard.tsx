@@ -23,21 +23,23 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div
-      className="group relative flex flex-col border-background border
+      className="group relative flex flex-col border border-light dark:border-dark 
      rounded-md shadow-lg"
     >
-      <div className="w-full border-b border-[#dddddd44] max-h-[200px] h-[200px] overflow-hidden duration-300">
+      <div className="relative w-full border-b border-light dark:border-dark h-[200px] overflow-hidden duration-300 ">
         <CustomImage
           src={src}
           width={200}
           height={200}
           alt={alt}
-          className="w-full rounded-t-md group-hover:scale-110 duration-700"
+          className="w-full h-full rounded-t-md group-hover:scale-110 duration-700 bg-background_light dark:bg-background"
         />
       </div>
 
-      <div className="flex flex-col gap-2 p-3 bg-background">
-        <h2 className="text-xl uppercase font-medium">{title}</h2>
+      <div className="flex flex-col gap-2 p-3 bg-background_light dark:bg-background">
+        <h2 className="text-xl uppercase font-medium text-background dark:text-text_dark">
+          {title}
+        </h2>
 
         <div className="flex flex-row gap-1 flex-wrap h-[70px] overflow-auto">
           {tags.map((elem, index) => {
@@ -49,7 +51,7 @@ const ProjectCard = ({
           <LinkButton
             title="Source code"
             style="w-10/12 rounded-lg"
-            icon={<FaGithub />}
+            icon={<FaGithub size={22} />}
             href={githubLink}
             target="_blank"
           />
@@ -57,7 +59,7 @@ const ProjectCard = ({
           <LinkButton
             title=""
             style="w-2/12 rounded-[12px] bg-transparent border border-primary hover:bg-transparent"
-            icon={<FaEye size={22} />}
+            icon={<FaEye size={22} className="text-primary dark:text-white" />}
             href={liveLink}
             target="_blank"
           />

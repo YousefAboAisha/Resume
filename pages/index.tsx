@@ -6,18 +6,16 @@ import Landing from "../Containers/Home/Landing"
 
 export default function Home() {
   return (
-    <>
-      <main className="mb-24">
-        <Landing />
+    <main className="mb-24">
+      <Landing />
 
-        <SkillsCards />
+      <SkillsCards />
 
-        <CV />
+      <CV />
 
-        <Hero />
+      <Hero />
 
-        <Contact />
-      </main>
-    </>
+      <Contact />
+    </main>
   )
 }

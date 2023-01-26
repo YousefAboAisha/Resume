@@ -14,11 +14,11 @@ module.exports = {
     extend: {
       colors: {
         // Dark Theme variables
-        background_dark: "#001",
+        background_dark: "#03001C",
         text_dark: "#EEEEEE",
 
         // Light theme variables
-        background_light: "#EEE",
+        background_light: "#FFFBF5",
         text_light: "#001",
 
         // Primary theme variables
@@ -29,7 +29,7 @@ module.exports = {
         secondary: "#003566",
 
         // Fixed backgroundColor in both themes
-        background: "#222",
+        background: "#181D31",
       },
 
       fontFamily: {
@@ -38,7 +38,8 @@ module.exports = {
       },
 
       borderColor: {
-        light: "#dddddd1a",
+        light: "#181D3150",
+        dark: "#dddddd1a",
       },
 
       keyframes: {
@@ -47,7 +48,7 @@ module.exports = {
           "50%": { transform: "translateY(-5px) scale(1.01)", opacity: 1 },
         },
         ShadowPulse: {
-          "0%, 100%": { boxShadow: "7px 12px #222222", opacity: 1 },
+          "0%, 100%": { boxShadow: "7px 12px #2B4865", opacity: 1 },
           "50%": { opacity: 0.9 },
         },
         ScaleEffect: {

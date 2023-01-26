@@ -4,19 +4,19 @@ import Heading from "../../Components/UI/Heading"
 
 const Landing = () => {
   return (
-    <div className="relative flex flex-col justify-center items-center mt-6 lg:mt-16 ">
+    <div className="relative flex flex-col justify-center items-center ">
       <div className="relative w-full flex justify-center">
         <CustomImage
           src={"/landing.png"}
           width={450}
           height={450}
           alt="Computer Image"
-          className="animate-HorizentalMove z-10 "
+          className="animate-HorizentalMove z-10 drop-shadow-md"
         />
 
-        <span className="absolute top-[10%] left-[5%] w-[25vh] h-[25vh] rounded-full bg-primary blur-[100px] mix-blend-plus-lighter"></span>
+        <span className="absolute top-[10%] left-[5%] w-[25vh] h-[25vh] rounded-full bg-primary blur-[80px]"></span>
 
-        <span className="absolute bottom-[10%] right-[5%] w-[25vh] h-[25vh] rounded-full bg-secondary blur-[100px] mix-blend-plus-lighter"></span>
+        <span className="absolute bottom-[5%] right-[10%] w-[25vh] h-[25vh] rounded-full bg-secondary blur-[80px]"></span>
       </div>
 
       <CustomImage

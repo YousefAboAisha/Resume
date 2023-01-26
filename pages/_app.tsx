@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div
-      className={`${theme} ${OpenSans.variable} ${cairo.variable} min-h-[1000px] bg-background_light dark:bg-background_dark`}
+      className={`${theme} ${OpenSans.variable} ${cairo.variable} min-h-[1000px]`}
     >
       <Head>
         <title>{Title}</title>
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/icon.png" />
       </Head>
 
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" enableSystem={true}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

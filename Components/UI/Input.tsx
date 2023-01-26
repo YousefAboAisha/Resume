@@ -9,14 +9,14 @@ type InputProps = {
 const Input = ({ value, placeholder, style, icon, ...rest }: InputProps) => {
   return (
     <div className="relative">
-      <div className="absolute flex justify-center p-2 rounded-l-md items-center left-1 top-[50%] translate-y-[-50%] h-full border-none outline-none">
+      <div className="absolute flex justify-center p-2 rounded-l-md items-center left-1 top-[50%] translate-y-[-50%] h-full border-none outline-none text-background dark:text-white">
         {icon}
       </div>
 
       <input
         value={value}
         {...rest}
-        className={`h-[56px] pl-11 border rounded-[8px] outline-none duration-300 w-full focus:valid:border-primary focus:border-primary
+        className={`h-[56px] pl-11 border border-light dark:border-dark text-text_light dark:text-text_dark rounded-[8px] outline-none duration-300 w-full focus:valid:border-primary focus:border-primary
       disabled:cursor-not-allowed bg-transparent ${style}`}
         placeholder={placeholder}
         required

@@ -46,7 +46,7 @@ const Navbar = () => {
             href={elem.href}
             className={`flex peer/${
               elem.title
-            } border-r border-light last-of-type:border-r-0 justify-center items-center h-full w-full duration-300 cursor-pointer 
+            } border-r border-dark last-of-type:border-r-0 justify-center items-center h-full w-full duration-300 cursor-pointer 
             ${router.pathname == `${elem.href}` ? "text-primary" : ""} `}
             title={elem.title}
           >

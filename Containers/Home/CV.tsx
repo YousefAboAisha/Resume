@@ -15,7 +15,7 @@ const CV = () => {
           additionalStyles="mx-0 mb-4"
         />
 
-        <p>
+        <p className="text-background dark:text-text_dark ">
           Every person is looking to build a life on their own needs an
           apartment to live on their own terms,If you are looking to start a
           business in the real estate industry, you need to set up your own

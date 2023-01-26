@@ -19,10 +19,6 @@
     @apply text-text_dark;
   }
 
-  /* body {
-    @apply bg-background_dark;
-  } */
-
   ::-webkit-scrollbar {
     @apply w-1 h-[5px];
   }

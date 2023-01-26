@@ -23,7 +23,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div
-      className="group relative flex flex-col border-[#dddddd44] border
+      className="group relative flex flex-col border-background border
      rounded-md shadow-lg"
     >
       <div className="w-full border-b border-[#dddddd44] max-h-[200px] h-[200px] overflow-hidden duration-300">
@@ -48,7 +48,7 @@ const ProjectCard = ({
         <div className="relative w-full flex flex-row mt-4 gap-2">
           <LinkButton
             title="Source code"
-            style="w-5/6 rounded-lg"
+            style="w-10/12 rounded-lg"
             icon={<FaGithub />}
             href={githubLink}
             target="_blank"
@@ -56,7 +56,7 @@ const ProjectCard = ({
 
           <LinkButton
             title=""
-            style="w-1/6 rounded-xl bg-transparent border border-primary hover:bg-transparent"
+            style="w-2/12 rounded-[12px] bg-transparent border border-primary hover:bg-transparent"
             icon={<FaEye size={22} />}
             href={liveLink}
             target="_blank"

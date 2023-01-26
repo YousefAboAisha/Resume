@@ -18,9 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <ThemeToggler />
       <Navbar />
-      <body>
-        <main className="container bg-transparent">{children}</main>
-      </body>
+      <main className="container mt-6 lg:mt-16">{children}</main>
       <Socialbar />
     </>
   )

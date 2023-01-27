@@ -13,7 +13,7 @@ const ThemeToggler = () => {
 
   return (
     <div
-      className="fixed flex justify-center items-center p-2 right-4 top-4 rounded-xl border-dark border font-bold cursor-pointer duration-500 bg-[#00000038] backdrop-blur-md z-50 text-background dark:text-white"
+      className="fixed flex justify-center items-center p-2 right-4 top-4 rounded-xl border-dark border font-bold cursor-pointer duration-500 bg-[#00000038] backdrop-blur-md z-50 text-text_light dark:text-white"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       {theme === "light" ? (

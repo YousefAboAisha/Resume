@@ -13,7 +13,7 @@ const Heading = ({
 }: HeadingProps) => {
   return (
     <h2
-      className={`group  text-5xl font-semibold duration-500 uppercase text-background dark:text-text_dark z-10 ${additionalStyles}  `}
+      className={`group  text-5xl font-semibold duration-500 uppercase text-text_light dark:text-text_dark z-10 ${additionalStyles}  `}
     >
       {title}
       <div className="relative w-fit before:absolute before:left-0 before:h-2/5 before:backdrop:blur-md before:bottom-0 before:rounded-sm before:bg-primary before:w-4/12 group-hover:before:w-8/12 duration-500 before:duration-500 before:-z-10">

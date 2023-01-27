@@ -14,12 +14,12 @@ module.exports = {
     extend: {
       colors: {
         // Dark Theme variables
-        background_dark: "#03001C",
+        background_dark: "#181D31",
         text_dark: "#EEEEEE",
 
         // Light theme variables
         background_light: "#FFFBF5",
-        text_light: "#001",
+        text_light: "#181D31",
 
         // Primary theme variables
         primary: "#FB2576",
@@ -29,7 +29,7 @@ module.exports = {
         secondary: "#003566",
 
         // Fixed backgroundColor in both themes
-        background: "#181D31",
+        // background: "#181D31",
       },
 
       fontFamily: {

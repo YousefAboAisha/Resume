@@ -1,4 +1,6 @@
-import { AiOutlineHome, AiOutlineMail, AiOutlineLaptop } from "react-icons/ai"
+import { AiOutlineHome } from "react-icons/ai"
+import { RxLayers } from "react-icons/rx"
+import { VscMailRead } from "react-icons/vsc"
 
 export const Routes = [
   {
@@ -9,11 +11,11 @@ export const Routes = [
   {
     title: "Projects",
     href: "/projects",
-    icon: AiOutlineLaptop,
+    icon: RxLayers,
   },
   {
     title: "Contact",
     href: "/contact",
-    icon: AiOutlineMail,
+    icon: VscMailRead,
   },
 ]

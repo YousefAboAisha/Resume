@@ -11,7 +11,7 @@ const Socialbar = () => {
             href={elem.href}
             target={"_blank"}
             rel={"noreferrer"}
-            className="duration-500 hover:bg-primary bg-background p-3 rounded-full shadow-md"
+            className="duration-500 hover:bg-primary dark:hover:bg-primary bg-background_light dark:bg-background_dark text-text_light dark:text-text_dark p-3 rounded-full shadow-lg"
           >
             {<elem.icon size={18} />}
           </Link>

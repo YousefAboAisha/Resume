@@ -26,13 +26,13 @@ const ContactForm = () => {
   return (
     <div className="relative flex flex-col items-center w-full overflow-hidden">
       <form className="relative flex flex-col gap-4 mt-24 w-10/12 md:w-8/12 lg:w-6/12 z-10">
-        <CustomImage
+        {/* <CustomImage
           src={"/vector.png"}
           width={100}
           height={100}
           alt="Pattern image"
-          className="abs-center w-full h-full blur-2xl opacity-30 -z-10 rotate-45"
-        />
+          className="abs-center w-full h-full blur-2xl opacity-20 -z-10 rotate-45"
+        /> */}
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input

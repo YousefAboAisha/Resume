@@ -36,8 +36,7 @@ const Navbar = () => {
     <div
       className={`fixed ${
         scrollDirection === "down" ? "lg:-top-12" : "lg:top-4"
-      } flex items-center justify-center bottom-2 left-[50%] translate-x-[-50%] text-white outline-none 
-      w-6/12 md:w-3/12 h-12 rounded-3xl duration-500 bg-background shadow-md z-50`}
+      } flex items-center justify-center bottom-2 left-[50%] translate-x-[-50%] text-text_light dark:text-text_dark outline-none w-6/12 md:w-3/12 h-12 rounded-3xl duration-500 bg-background_light dark:bg-background_dark border border-dark shadow-lg z-50`}
     >
       {Routes.map((elem, index) => {
         return (
@@ -46,7 +45,7 @@ const Navbar = () => {
             href={elem.href}
             className={`flex peer/${
               elem.title
-            } border-r border-dark last-of-type:border-r-0 justify-center items-center h-full w-full duration-300 cursor-pointer 
+            } border-r border-light dark:border-dark last-of-type:border-r-0 justify-center items-center h-full w-full duration-300 cursor-pointer 
             ${router.pathname == `${elem.href}` ? "text-primary" : ""} `}
             title={elem.title}
           >

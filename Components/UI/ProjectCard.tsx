@@ -32,12 +32,12 @@ const ProjectCard = ({
           width={200}
           height={200}
           alt={alt}
-          className="w-full h-full rounded-t-md group-hover:scale-110 duration-700 bg-background_light dark:bg-background"
+          className="w-full h-full rounded-t-md group-hover:scale-110 duration-700 background_dark_light dark:background_dark"
         />
       </div>
 
-      <div className="flex flex-col gap-2 p-3 bg-background_light dark:bg-background">
-        <h2 className="text-xl uppercase font-medium text-background dark:text-text_dark">
+      <div className="flex flex-col gap-2 p-3 background_dark_light dark:background_dark">
+        <h2 className="text-xl uppercase font-medium text-text_light dark:text-text_dark">
           {title}
         </h2>
 

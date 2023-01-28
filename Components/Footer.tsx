@@ -6,6 +6,8 @@ import CustomImage from "./UI/CustomImage"
 import FooterCard from "./UI/FooterCard"
 
 const Footer = () => {
+  const date = new Date().getFullYear()
+
   return (
     <footer className="relative container grid grid-cols-1 lg:grid-cols-2 mt-24 mb-12 p-6 gap-4 text-text_light dark:text-text_dark bg-background_light dark:bg-background_dark border dark:border-dark rounded-lg shadow-lg">
       <div className="flex flex-col gap-6">
@@ -38,15 +40,15 @@ const Footer = () => {
                 href={elem.href}
                 target={"_blank"}
                 rel={"noreferrer"}
-                className="duration-500 hover:bg-primary dark:hover:bg-primary bg-background_light dark:bg-background_dark text-text_light dark:text-text_dark p-3 shadow-lg rounded-md"
+                className="bg-background_light dark:bg-background_dark text-text_light dark:text-text_dark p-3 shadow-lg rounded-md border border-transparent hover:border-light dark:hover:border-dark duration-500 "
               >
                 {<elem.icon size={19} />}
               </Link>
             )
           })}
         </div>
-        <h2 className="font-light text-sm">
-          All Rights Reserved To Yousef R Abo Aisha ©
+        <h2 className="text-[15px] mt-2 font-secondary">
+          All Rights Reserved To Yousef R Abo Aisha © {date}
         </h2>
       </div>
     </footer>

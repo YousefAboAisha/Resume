@@ -4,15 +4,16 @@ type FooterCardProps = {
   label: string
   value: string
   Icon: IconType
+  href?: string
 }
 
 const FooterCard = ({ label, value, Icon }: FooterCardProps) => {
   return (
-    <div className="relative">
-      <div className="flex flex-row gap-4 items-center">
-        <Icon size={24} className="text-text_light dark:text-text_dark" />
+    <div className="relative p-2">
+      <div className="flex flex-row gap-6 items-center">
+        <Icon size={27} className="text-text_light dark:text-text_dark" />
         <div className="flex flex-col">
-          <h4>{label}</h4>
+          <h4 className="font-bold">{label}</h4>
           <span className="font-light">{value}</span>
         </div>
       </div>

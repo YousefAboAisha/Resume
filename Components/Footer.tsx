@@ -7,8 +7,8 @@ import FooterCard from "./UI/FooterCard"
 
 const Footer = () => {
   return (
-    <footer className="relative container grid grid-cols-1 lg:grid-cols-2 mt-24 mb-12 p-8 gap-4 text-text_light dark:text-text_dark bg-background_light dark:bg-background_dark border border-dark rounded-lg shadow-lg">
-      <div className="flex flex-col gap-4">
+    <footer className="relative container grid grid-cols-1 lg:grid-cols-2 mt-24 mb-12 p-6 gap-4 text-text_light dark:text-text_dark bg-background_light dark:bg-background_dark border-dark border rounded-lg shadow-lg">
+      <div className="flex flex-col gap-6">
         {FooterData.map((elem, index) => {
           return (
             <FooterCard
@@ -38,9 +38,9 @@ const Footer = () => {
                 href={elem.href}
                 target={"_blank"}
                 rel={"noreferrer"}
-                className="duration-500 hover:bg-primary dark:hover:bg-primary bg-background_light dark:bg-background_dark text-text_light dark:text-text_dark p-3 shadow-lg"
+                className="duration-500 hover:bg-primary dark:hover:bg-primary bg-background_light dark:bg-background_dark text-text_light dark:text-text_dark p-3 shadow-lg rounded-md"
               >
-                {<elem.icon size={18} />}
+                {<elem.icon size={19} />}
               </Link>
             )
           })}

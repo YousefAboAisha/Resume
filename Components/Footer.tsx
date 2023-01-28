@@ -7,7 +7,7 @@ import FooterCard from "./UI/FooterCard"
 
 const Footer = () => {
   return (
-    <footer className="relative container grid grid-cols-1 lg:grid-cols-2 mt-24 mb-12 p-6 gap-4 text-text_light dark:text-text_dark bg-background_light dark:bg-background_dark border-dark border rounded-lg shadow-lg">
+    <footer className="relative container grid grid-cols-1 lg:grid-cols-2 mt-24 mb-12 p-6 gap-4 text-text_light dark:text-text_dark bg-background_light dark:bg-background_dark border dark:border-dark rounded-lg shadow-lg">
       <div className="flex flex-col gap-6">
         {FooterData.map((elem, index) => {
           return (

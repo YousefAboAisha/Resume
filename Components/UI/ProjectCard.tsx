@@ -24,7 +24,7 @@ const ProjectCard = ({
   return (
     <div
       className="group relative flex flex-col border border-light dark:border-dark 
-     rounded-md shadow-lg"
+     rounded-md shadow-lg dark:bg-background_dark bg-background_light"
     >
       <div className="relative w-full border-b border-light dark:border-dark h-[200px] overflow-hidden duration-300 ">
         <CustomImage

@@ -1,32 +1,27 @@
-import Link from "next/link"
+import { AiOutlineLoading3Quarters } from "react-icons/ai"
 
 type ButtonProps = {
   title: string
   style?: string
   icon?: JSX.Element
-  hasLink: boolean
+  loading?: boolean
 } & React.ComponentProps<"button">
 
-const Button = ({ title, icon, hasLink, style, ...rest }: ButtonProps) => {
+const Button = ({ title, icon, style, loading, ...rest }: ButtonProps) => {
+  loading = false
   return (
     <button
       {...rest}
       className={`relative uppercase bg-primary text-white w-full py-[10px] outline-none flex justify-center gap-3 items-center disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer transition shadow-sm rounded-md border-transparent border-[1px] hover:bg-primary_hover hover:border-[1px] duration-500 ${style}`}
     >
-      {hasLink ? (
-        <Link
-          href={"/resume.pdf"}
-          className="flex flex-row gap-2 items-center font-secondary"
-          download
-          target={"_blank"}
-        >
-          {title} {icon}
-        </Link>
-      ) : (
-        <span className="flex flex-row gap-2 items-center font-secondary">
-          {title} {icon}
-        </span>
-      )}
+      <span className="flex flex-row gap-2 items-center font-secondary">
+        {title}
+        {loading ? (
+          <AiOutlineLoading3Quarters size={20} className="animate-spin" />
+        ) : (
+          icon
+        )}
+      </span>
     </button>
   )
 }

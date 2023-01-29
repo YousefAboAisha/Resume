@@ -3,6 +3,7 @@ import Footer from "../Components/Footer"
 import Navbar from "../Components/Navbar"
 import Socialbar from "../Components/Socialbar"
 import ThemeToggler from "../Components/ThemeToggler"
+import Snackbar from "../Components/UI/Snackbar"
 import Spinner from "../Components/UI/Spinner"
 import useLoading from "../Hooks/useLoading"
 
@@ -22,6 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="container">{children}</main>
       <Socialbar />
       <Footer />
+      <Snackbar />
     </>
   )
 }

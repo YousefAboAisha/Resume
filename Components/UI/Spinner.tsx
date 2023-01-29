@@ -1,8 +1,12 @@
 import React from "react"
 
-const Spinner = () => {
+type SpinnerProps = {
+  additionalStyles?: string
+}
+
+const Spinner = ({ additionalStyles }: SpinnerProps) => {
   return (
-    <div role="status" className="abs-center fixed z-50">
+    <div role="status" className={`abs-center fixed z-50 ${additionalStyles}`}>
       <svg
         aria-hidden="true"
         className="inline w-8 h-8 mr-2 text-text_light dark:text-text_dark animate-spin fill-primary"

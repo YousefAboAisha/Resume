@@ -81,7 +81,6 @@ const Contact = () => {
             title="Submit"
             style="mt-2 w-5/12 h-[48px] p-5 "
             icon={<IoIosSend size={23} />}
-            hasLink={false}
             type="submit"
           />
         </form>

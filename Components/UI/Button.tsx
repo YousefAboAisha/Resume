@@ -8,7 +8,6 @@ type ButtonProps = {
 } & React.ComponentProps<"button">
 
 const Button = ({ title, icon, style, loading, ...rest }: ButtonProps) => {
-  loading = false
   return (
     <button
       {...rest}

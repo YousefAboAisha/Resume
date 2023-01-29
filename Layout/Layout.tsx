@@ -23,7 +23,6 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="container">{children}</main>
       <Socialbar />
       <Footer />
-      <Snackbar />
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { BiUser } from "react-icons/bi"
 import { IoIosSend } from "react-icons/io"
 import {
@@ -7,13 +7,18 @@ import {
   MdOutlineMessage,
 } from "react-icons/md"
 import Button from "../../Components/UI/Button"
-import CustomImage from "../../Components/UI/CustomImage"
 import Input from "../../Components/UI/Input"
 import Select from "../../Components/UI/Select"
 import TextArea from "../../Components/UI/TextArea"
 import { ProjectTypes } from "../../Data/projectTypes"
+import emailjs from "@emailjs/browser"
+import Snackbar from "../../Components/UI/Snackbar"
 
 const ContactForm = () => {
+  const [Loading, setLoading] = useState(false)
+  const [IsActive, setIsActive] = useState(false)
+  const form = useRef<HTMLFormElement>(null)
+
   const [FormData, setFormData] = useState({
     FirstName: "",
     LastName: "",
@@ -23,9 +28,64 @@ const ContactForm = () => {
     Message: "",
   })
 
+  const emptyForm = () => {
+    setFormData({
+      FirstName: "",
+      LastName: "",
+      Email: "",
+      ProjectType: "",
+      MessageTitle: "",
+      Message: "",
+    })
+  }
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const currentForm = form.current
+    // this prevents sending emails if there is no form.
+    // in case currentForm cannot possibly ever be null,
+    // you could alert the user or throw an Error, here
+    if (currentForm == null) return
+
+    setLoading(true)
+
+    emailjs
+      .sendForm(
+        "service_3n86cqi",
+        "project_form",
+        currentForm,
+        "user_D9y1Gws0dAtyKLW4zOemd"
+      )
+      .then(
+        (result) => {
+          console.log(result.text)
+          setLoading(false)
+          setIsActive(true)
+          setTimeout(() => {
+            setIsActive(false)
+          }, 5000)
+          emptyForm()
+        },
+        (error) => {
+          console.log(error.text)
+          setLoading(false)
+        }
+      )
+  }
+
   return (
     <div className="relative flex flex-col items-center w-full overflow-hidden">
-      <form className="relative flex flex-col gap-4 mt-24 w-10/12 md:w-8/12 lg:w-6/12 z-10">
+      <Snackbar
+        IsActive={IsActive}
+        message={"We will review your project request very soon!"}
+      />
+
+      <form
+        ref={form}
+        onSubmit={(e) => sendEmail(e)}
+        className="relative flex flex-col gap-4 mt-24 w-10/12 md:w-8/12 lg:w-6/12 z-10"
+      >
         {/* <CustomImage
           src={"/vector.png"}
           width={100}
@@ -46,6 +106,7 @@ const ContactForm = () => {
             }
             type="text"
             icon={<BiUser size={23} />}
+            name="fname"
           />
           <Input
             placeholder="Last name"
@@ -58,6 +119,7 @@ const ContactForm = () => {
             }
             type="text"
             icon={<BiUser size={23} />}
+            name="lname"
           />
         </div>
 
@@ -72,6 +134,7 @@ const ContactForm = () => {
           }
           type="email"
           icon={<MdOutlineEmail size={23} />}
+          name="email"
         />
 
         <Select
@@ -85,6 +148,7 @@ const ContactForm = () => {
             })
           }
           icon={<MdOutlineAccountTree size={23} />}
+          name="projectType"
         />
 
         <Input
@@ -98,6 +162,7 @@ const ContactForm = () => {
           }
           type="text"
           icon={<MdOutlineMessage size={23} />}
+          name="messageTitle"
         />
 
         <TextArea
@@ -110,6 +175,7 @@ const ContactForm = () => {
             })
           }
           maxLength={100}
+          name="message"
         />
 
         <Button
@@ -117,6 +183,7 @@ const ContactForm = () => {
           style="mt-2 w-5/12 h-[48px] p-5 "
           icon={<IoIosSend size={23} />}
           type="submit"
+          loading={Loading}
         />
       </form>
     </div>

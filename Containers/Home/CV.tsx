@@ -12,17 +12,16 @@ const CV = () => {
         <Heading
           title=""
           highLightText="who Am I"
-          additionalStyles="mx-0 mb-4"
+          additionalStyles="mx-0 mb-2"
         />
 
         <p className="text-text_light dark:text-text_dark ">
-          Every person is looking to build a life on their own needs an
-          apartment to live on their own terms,If you are looking to start a
-          business in the real estate industry, you need to set up your own
-          company first, Every person is looking to build a life on their own
-          needs an apartment to live on their own terms,If you are looking to
-          start a business in the real estate industry, you need to set up your
-          own company first.
+          Hi, I am Yousef Rashad Abu Aisha, Highly motivated software developer
+          in Front End development and a strong background in computer science.
+          Proficient in a variety of programming languages and frameworks,
+          including: JavaScript, TypeScript, and the basics of PHP and JAVA.
+          Skilled in designing and implementing solutions for complex problems
+          and delivering high-quality software products on time.
         </p>
 
         <LinkButton

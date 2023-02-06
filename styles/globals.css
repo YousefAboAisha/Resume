@@ -38,7 +38,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--font-opensans);
+  font-family: var(--font-roboto);
 }
 
 li {

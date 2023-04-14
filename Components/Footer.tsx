@@ -1,12 +1,12 @@
-import Link from "next/link"
-import React from "react"
-import { FooterData } from "../Data/FooterData"
-import { Social } from "../Data/Social"
-import CustomImage from "./UI/CustomImage"
-import FooterCard from "./UI/FooterCard"
+import Link from "next/link";
+import React from "react";
+import { FooterData } from "../Data/FooterData";
+import { Social } from "../Data/Social";
+import CustomImage from "./UI/CustomImage";
+import FooterCard from "./UI/FooterCard";
 
 const Footer = () => {
-  const date = new Date().getFullYear()
+  const date = new Date().getFullYear();
 
   return (
     <footer className="relative container grid grid-cols-1 lg:grid-cols-2 mt-24 mb-12 p-6 gap-4 text-text_light dark:text-text_dark bg-background_light dark:bg-background_dark border dark:border-dark rounded-lg shadow-lg">
@@ -19,7 +19,7 @@ const Footer = () => {
               value={elem.value}
               Icon={elem.icon}
             />
-          )
+          );
         })}
       </div>
 
@@ -44,7 +44,7 @@ const Footer = () => {
               >
                 {<elem.icon size={19} />}
               </Link>
-            )
+            );
           })}
         </div>
         <h2 className="text-[15px] mt-2 font-secondary">
@@ -52,7 +52,7 @@ const Footer = () => {
         </h2>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

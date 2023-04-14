@@ -1,17 +1,17 @@
-import React from "react"
-import CustomImage from "./UI/CustomImage"
-import Heading from "./UI/Heading"
+import React from "react";
+import CustomImage from "./UI/CustomImage";
+import Heading from "./UI/Heading";
 
 type LandingProps = {
-  mainImg: string
-  width: number
-  height: number
-  hasBlurColors: boolean
-  decorateImage1?: string
-  decorateImage2?: string
-  normalHeading: string
-  highlightHeading: string
-}
+  mainImg: string;
+  width: number;
+  height: number;
+  hasBlurColors: boolean;
+  decorateImage1?: string;
+  decorateImage2?: string;
+  normalHeading: string;
+  highlightHeading: string;
+};
 
 const Landing = ({
   mainImg,
@@ -32,7 +32,7 @@ const Landing = ({
             width={width}
             height={height}
             alt="Landing Image"
-            className="animate-HorizentalMove z-10 drop-shadow-md"
+            className="z-10 drop-shadow-md"
           />
 
           {hasBlurColors ? (
@@ -73,7 +73,7 @@ const Landing = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

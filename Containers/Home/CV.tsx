@@ -1,6 +1,5 @@
 import React from "react"
 import { RxDownload } from "react-icons/rx"
-import Button from "../../Components/UI/Button"
 import CustomImage from "../../Components/UI/CustomImage"
 import Heading from "../../Components/UI/Heading"
 import LinkButton from "../../Components/UI/LinkButton"
@@ -15,7 +14,7 @@ const CV = () => {
           additionalStyles="mx-0 mb-2"
         />
 
-        <p className="text-text_light dark:text-text_dark ">
+        <p className="text-text_light dark:text-text_dark">
           Hi, I am Yousef Rashad Abu Aisha, Highly motivated software developer
           in Front End development and a strong background in computer science.
           Proficient in a variety of programming languages and frameworks,

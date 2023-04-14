@@ -1,54 +1,63 @@
-import { useRef, useState } from "react"
-import { BiUser } from "react-icons/bi"
-import { IoIosSend } from "react-icons/io"
+import { ChangeEvent, useRef, useState } from "react";
+import { BiUser } from "react-icons/bi";
+import { IoIosSend } from "react-icons/io";
 import {
   MdOutlineAccountTree,
   MdOutlineEmail,
   MdOutlineMessage,
-} from "react-icons/md"
-import Button from "../../Components/UI/Button"
-import Input from "../../Components/UI/Input"
-import Select from "../../Components/UI/Select"
-import TextArea from "../../Components/UI/TextArea"
-import { ProjectTypes } from "../../Data/projectTypes"
-import emailjs from "@emailjs/browser"
-import Snackbar from "../../Components/UI/Snackbar"
+} from "react-icons/md";
+import Button from "../../Components/UI/Button";
+import Input from "../../Components/UI/Input";
+import Select from "../../Components/UI/Select";
+import TextArea from "../../Components/UI/TextArea";
+import { ProjectTypes } from "../../Data/projectTypes";
+import emailjs from "@emailjs/browser";
+import Snackbar from "../../Components/UI/Snackbar";
 
 const ContactForm = () => {
-  const [Loading, setLoading] = useState(false)
-  const [IsActive, setIsActive] = useState(false)
-  const form = useRef<HTMLFormElement>(null)
+  const [Loading, setLoading] = useState(false);
+  const [IsActive, setIsActive] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
 
-  const [FormData, setFormData] = useState({
-    FirstName: "",
-    LastName: "",
-    Email: "",
-    ProjectType: "",
-    MessageTitle: "",
-    Message: "",
-  })
+  const [formData, setFormData] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    projectType: "",
+    messageTitle: "",
+    message: "",
+  });
 
   const emptyForm = () => {
     setFormData({
-      FirstName: "",
-      LastName: "",
-      Email: "",
-      ProjectType: "",
-      MessageTitle: "",
-      Message: "",
-    })
-  }
+      fname: "",
+      lname: "",
+      email: "",
+      projectType: "",
+      messageTitle: "",
+      message: "",
+    });
+  };
+
+  const handleChange = (
+    event: ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const currentForm = form.current
+    const currentForm = form.current;
     // this prevents sending emails if there is no form.
     // in case currentForm cannot possibly ever be null,
     // you could alert the user or throw an Error, here
-    if (currentForm == null) return
+    if (currentForm == null) return;
 
-    setLoading(true)
+    setLoading(true);
 
     emailjs
       .sendForm(
@@ -59,20 +68,20 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
-          console.log(result.text)
-          setLoading(false)
-          setIsActive(true)
+          console.log(result.text);
+          setLoading(false);
+          setIsActive(true);
           setTimeout(() => {
-            setIsActive(false)
-          }, 5000)
-          emptyForm()
+            setIsActive(false);
+          }, 5000);
+          emptyForm();
         },
         (error) => {
-          console.log(error.text)
-          setLoading(false)
+          console.log(error.text);
+          setLoading(false);
         }
-      )
-  }
+      );
+  };
 
   return (
     <div className="relative flex flex-col items-center w-full overflow-hidden">
@@ -97,26 +106,21 @@ const ContactForm = () => {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input
             placeholder="First name"
-            value={FormData.FirstName}
-            onChange={(e) =>
-              setFormData({
-                ...FormData,
-                FirstName: e.target.value,
-              })
-            }
+            value={formData.fname}
+            onChange={(e) => {
+              handleChange(e);
+            }}
             type="text"
             icon={<BiUser size={23} />}
             name="fname"
           />
+
           <Input
             placeholder="Last name"
-            value={FormData.LastName}
-            onChange={(e) =>
-              setFormData({
-                ...FormData,
-                LastName: e.target.value,
-              })
-            }
+            value={formData.lname}
+            onChange={(e) => {
+              handleChange(e);
+            }}
             type="text"
             icon={<BiUser size={23} />}
             name="lname"
@@ -125,13 +129,10 @@ const ContactForm = () => {
 
         <Input
           placeholder="Email"
-          value={FormData.Email}
-          onChange={(e) =>
-            setFormData({
-              ...FormData,
-              Email: e.target.value,
-            })
-          }
+          value={formData.email}
+          onChange={(e) => {
+            handleChange(e);
+          }}
           type="email"
           icon={<MdOutlineEmail size={23} />}
           name="email"
@@ -140,26 +141,20 @@ const ContactForm = () => {
         <Select
           title="Select project type"
           options={ProjectTypes}
-          value={FormData.ProjectType}
-          onChange={(e) =>
-            setFormData({
-              ...FormData,
-              ProjectType: e.target.value,
-            })
-          }
+          value={formData.projectType}
+          onChange={(e) => {
+            handleChange(e);
+          }}
           icon={<MdOutlineAccountTree size={23} />}
           name="projectType"
         />
 
         <Input
           placeholder="Message title"
-          value={FormData.MessageTitle}
-          onChange={(e) =>
-            setFormData({
-              ...FormData,
-              MessageTitle: e.target.value,
-            })
-          }
+          value={formData.messageTitle}
+          onChange={(e) => {
+            handleChange(e);
+          }}
           type="text"
           icon={<MdOutlineMessage size={23} />}
           name="messageTitle"
@@ -167,13 +162,10 @@ const ContactForm = () => {
 
         <TextArea
           placeholder="Enter Your Message..."
-          value={FormData.Message}
-          onChange={(e) =>
-            setFormData({
-              ...FormData,
-              Message: e.target.value,
-            })
-          }
+          value={formData.message}
+          onChange={(e) => {
+            handleChange(e);
+          }}
           maxLength={100}
           name="message"
         />
@@ -187,7 +179,7 @@ const ContactForm = () => {
         />
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

@@ -1,18 +1,24 @@
-import img1 from "../public/Sites/landing.svg"
-import img2 from "../public/Sites/youtube.svg"
-import img3 from "../public/Sites/food.svg"
-import img4 from "../public/Sites/movie.svg"
-import img5 from "../public/Sites/weather.svg"
-import img6 from "../public/Sites/appartement.svg"
+import img1 from "../public/Sites/landing.svg";
+import img2 from "../public/Sites/youtube.svg";
+import img3 from "../public/Sites/food.svg";
+import img4 from "../public/Sites/movie.svg";
+import img5 from "../public/Sites/weather.svg";
+import img6 from "../public/Sites/appartement.svg";
 
 export const Sites = [
   {
-    title: "Portfolio",
+    title: "Bambo App",
     href: img1,
-    live_link: "https://yousefaboaisha.github.io/MyBlog/",
-    tags: ["HTML", "CSS", "JS", "BOOTSTRAB", "REACT.JS"],
-    alt: "Portfolio",
-    github_link: "https://github.com/YousefAboAisha/Portfolio1",
+    live_link: "https://bamboo-git-testing-mohammed-sada.vercel.app",
+    tags: [
+      "NEXT JS",
+      "Tailwind CSS",
+      "Firestore",
+      "Realt time chat",
+      "Rest API",
+    ],
+    alt: "Bambo",
+    github_link: "https://github.com/YousefAboAisha",
   },
   {
     title: "Youtube-Clone",
@@ -55,11 +61,11 @@ export const Sites = [
     github_link: "https://github.com/YousefAboAisha/Weather-App",
   },
   {
-    title: "Real Estates App",
+    title: "Chalet App",
     href: img6,
-    live_link: "https://yousefaboaisha.github.io/Houses-App/",
-    tags: ["HTML", "CSS", "JS", "Firebase", "BOOTSTRAB", "REACT.JS"],
-    alt: "Appartments App",
-    github_link: "https://github.com/YousefAboAisha/apartmentSellingApp",
+    live_link: "https://chalet-ten.vercel.app/",
+    tags: ["NEXT JS", "Tailwind CSS", "Google maps", "Dark & Light theme"],
+    alt: "Chalet App",
+    github_link: "https://github.com/YousefAboAisha",
   },
-]
+];

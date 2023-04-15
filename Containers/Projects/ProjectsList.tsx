@@ -1,6 +1,6 @@
-import React from "react"
-import ProjectCard from "../../Components/UI/ProjectCard"
-import { Sites } from "../../Data/Sites"
+import React from "react";
+import ProjectCard from "../../Components/UI/ProjectCard";
+import { Sites } from "../../Data/Sites";
 
 const Projects = () => {
   return (
@@ -16,10 +16,10 @@ const Projects = () => {
             githubLink={elem.github_link}
             liveLink={elem.live_link}
           />
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

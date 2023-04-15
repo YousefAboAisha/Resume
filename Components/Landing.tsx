@@ -11,6 +11,7 @@ type LandingProps = {
   decorateImage2?: string;
   normalHeading: string;
   highlightHeading: string;
+  className?: string;
 };
 
 const Landing = ({
@@ -22,6 +23,7 @@ const Landing = ({
   decorateImage2,
   normalHeading,
   highlightHeading,
+  className,
 }: LandingProps) => {
   return (
     <div className="flex flex-col justify-center items-center h-screen w-screen ml-[50%] translate-x-[-50%]  before:opacity-60 before:blur-[1px] before:absolute before:bg-main-pattern before:dark:bg-main-pattern2 before:-z-10 before:w-full before:h-full before:bg-fixed ">
@@ -64,11 +66,11 @@ const Landing = ({
           />
         ) : null}
 
-        <div className="mx-auto!">
+        <div className={`!mx-auto ${className}`}>
           <Heading
             title={normalHeading}
             highLightText={highlightHeading}
-            additionalStyles="mx-auto text-center"
+            additionalStyles={`mx-auto text-center`}
           />
         </div>
       </div>

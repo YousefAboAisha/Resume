@@ -1,14 +1,15 @@
-import img1 from "../public/Sites/landing.svg";
-import img2 from "../public/Sites/youtube.svg";
-import img3 from "../public/Sites/food.svg";
-import img4 from "../public/Sites/movie.svg";
-import img5 from "../public/Sites/weather.svg";
-import img6 from "../public/Sites/appartement.svg";
-
 export const Sites = [
   {
+    title: "Chalet App",
+    href: "/Sites/chalet.png",
+    live_link: "https://chalet-ten.vercel.app/",
+    tags: ["NEXT JS", "Tailwind CSS", "Google maps", "Dark & Light theme"],
+    alt: "Chalet App",
+    github_link: "https://github.com/YousefAboAisha",
+  },
+  {
     title: "Bambo App",
-    href: img1,
+    href: "/Sites/bambo.png",
     live_link: "https://bamboo-git-testing-mohammed-sada.vercel.app",
     tags: [
       "NEXT JS",
@@ -22,15 +23,15 @@ export const Sites = [
   },
   {
     title: "Youtube-Clone",
-    href: img2,
+    href: "/Sites/youtube.png",
     live_link: "https://yousefaboaisha.github.io/Youtube-clone/",
-    tags: ["HTML", "CSS"],
+    tags: ["HTML", "CSS", "Grid Layout", "Pure CSS"],
     alt: "Youtube-Clone",
     github_link: "https://github.com/YousefAboAisha/Youtube-clone",
   },
   {
     title: "Inno store",
-    href: img3,
+    href: "/Sites/inno.png",
     live_link: "https://benevolent-tartufo-f71b4a.netlify.app/",
     tags: ["HTML", "CSS", "JS", "REACT.JS", "firebase"],
     alt: "Inno store",
@@ -38,26 +39,26 @@ export const Sites = [
   },
   {
     title: "HULU",
-    href: img4,
+    href: "/Sites/hulu.png",
     live_link: "https://hulu-eight-iota.vercel.app/trending?page=1",
-    tags: ["HTML", "CSS", "JS", "NEXT JS", "Tailwind CSS", "TMDB API"],
+    tags: [
+      "HTML",
+      "CSS",
+      "JS",
+      "NEXT JS",
+      "Tailwind CSS",
+      "TMDB API",
+      "Firebase",
+    ],
     alt: "HULU",
     github_link: "https://github.com/YousefAboAisha/Hulu",
   },
   {
-    title: "Prev-Portfoilio",
-    href: img5,
-    live_link: "https://yousefaboaisha.github.io/personalBlog/",
-    tags: ["HTML", "CSS", "JS", "Email JS", "REACT.JS", "gh-pages"],
-    alt: "Prev-Portfoilio",
-    github_link: "https://github.com/YousefAboAisha/personalBlog",
-  },
-  {
-    title: "Chalet App",
-    href: img6,
-    live_link: "https://chalet-ten.vercel.app/",
-    tags: ["NEXT JS", "Tailwind CSS", "Google maps", "Dark & Light theme"],
-    alt: "Chalet App",
-    github_link: "https://github.com/YousefAboAisha",
+    title: "Saeed Shops",
+    href: "/Sites/saeed.png",
+    live_link: "https://www.trysaid.com/",
+    tags: ["React JS", "Tailwind CSS", "Google maps", "Authntication"],
+    alt: "Saeed Shops",
+    github_link: "https://github.com/YousefAboAisha/said-food",
   },
 ];

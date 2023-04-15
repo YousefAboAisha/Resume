@@ -1,17 +1,16 @@
-import Image, { StaticImageData } from "next/image"
-import { FaEye, FaGithub } from "react-icons/fa"
-import CustomImage from "./CustomImage"
-import LinkButton from "./LinkButton"
-import Tag from "./Tag"
+import { FaEye, FaGithub } from "react-icons/fa";
+import CustomImage from "./CustomImage";
+import LinkButton from "./LinkButton";
+import Tag from "./Tag";
 
 type ProjectCardProps = {
-  src: string
-  alt: string
-  title: string
-  tags: string[]
-  githubLink: string
-  liveLink: string
-}
+  src: string;
+  alt: string;
+  title: string;
+  tags: string[];
+  githubLink: string;
+  liveLink: string;
+};
 
 const ProjectCard = ({
   src,
@@ -26,28 +25,28 @@ const ProjectCard = ({
       className="group relative flex flex-col border border-light dark:border-dark 
      rounded-md shadow-lg dark:bg-background_dark bg-background_light"
     >
-      <div className="relative w-full border-b border-light dark:border-dark h-[200px] overflow-hidden duration-300 ">
+      <div className="relative w-full h-[230px] overflow-hidden duration-300 ">
         <CustomImage
           src={src}
-          width={200}
-          height={200}
+          width={1000}
+          height={1000}
           alt={alt}
-          className="w-full h-full rounded-t-md group-hover:scale-110 duration-700 background_dark_light dark:background_dark"
+          className="w-full h-full rounded-t-md group-hover:scale-110 duration-700"
         />
       </div>
 
-      <div className="flex flex-col gap-2 p-3 background_dark_light dark:background_dark">
-        <h2 className="text-xl uppercase font-medium text-text_light dark:text-text_dark">
+      <div className="flex flex-col gap-4 p-3 background_dark_light dark:background_dark">
+        <h2 className="text-lg uppercase font-bold text-text_light dark:text-text_dark">
           {title}
         </h2>
 
         <div className="flex flex-row gap-1 flex-wrap h-[70px] overflow-auto">
           {tags.map((elem, index) => {
-            return <Tag key={index} title={elem} />
+            return <Tag key={index} title={elem} />;
           })}
         </div>
 
-        <div className="relative w-full flex flex-row mt-4 gap-2">
+        <div className="relative w-full flex flex-row mt-2 gap-2">
           <LinkButton
             title="Source code"
             style="w-10/12 rounded-lg"
@@ -66,7 +65,7 @@ const ProjectCard = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

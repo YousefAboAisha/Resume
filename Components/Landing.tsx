@@ -34,7 +34,7 @@ const Landing = ({
             width={width}
             height={height}
             alt="Landing Image"
-            className="z-10 drop-shadow-md"
+            className="z-10 drop-shadow-md animate-ScaleEffect"
           />
 
           {hasBlurColors ? (

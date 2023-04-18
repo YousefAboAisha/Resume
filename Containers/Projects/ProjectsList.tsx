@@ -1,9 +1,9 @@
-import { getDownloadURL, ref, listAll } from "firebase/storage";
+// import { getDownloadURL, ref, listAll } from "firebase/storage";
 import React, { useEffect, useState } from "react";
-import ProjectCard from "../../Components/UI/ProjectCard";
-import SkeletonLoading from "../../Components/UI/SkeletonLoading";
+import ProjectCard from "../../Components/UI/Cards/ProjectCard";
+import SkeletonLoading from "../../Components/UI/Utils/SkeletonLoading";
 import { Sites } from "../../Data/Sites";
-import { storage } from "../../firebase";
+// import { storage } from "../../firebase";
 
 const Projects = () => {
   // const storageRef = ref(storage, `/sites/`);
@@ -57,7 +57,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="section w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="section w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[400px]">
       {loading ? (
         <>
           <SkeletonLoading />

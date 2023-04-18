@@ -1,5 +1,5 @@
-import React from "react"
-import Heading from "../../Components/UI/Heading"
+import React from "react";
+import Heading from "../../Components/UI/Typography/Heading";
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
         additionalStyles="text-text_dark"
       />
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

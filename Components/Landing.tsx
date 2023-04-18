@@ -1,6 +1,6 @@
 import React from "react";
-import CustomImage from "./UI/CustomImage";
-import Heading from "./UI/Heading";
+import CustomImage from "./UI/Cards/CustomImage";
+import Heading from "./UI/Typography/Heading";
 
 type LandingProps = {
   mainImg: string;

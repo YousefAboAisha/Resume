@@ -1,8 +1,8 @@
-import React from "react"
-import { RxDownload } from "react-icons/rx"
-import CustomImage from "../../Components/UI/CustomImage"
-import Heading from "../../Components/UI/Heading"
-import LinkButton from "../../Components/UI/LinkButton"
+import React from "react";
+import { RxDownload } from "react-icons/rx";
+import CustomImage from "../../Components/UI/Cards/CustomImage";
+import Heading from "../../Components/UI/Typography/Heading";
+import LinkButton from "../../Components/UI/Inputs/LinkButton";
 
 const CV = () => {
   return (
@@ -41,7 +41,7 @@ const CV = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CV
+export default CV;

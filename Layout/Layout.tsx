@@ -1,18 +1,17 @@
-import React from "react"
-import Footer from "../Components/Footer"
-import Navbar from "../Components/Navbar"
-import Socialbar from "../Components/Socialbar"
-import ThemeToggler from "../Components/ThemeToggler"
-import Snackbar from "../Components/UI/Snackbar"
-import Spinner from "../Components/UI/Spinner"
-import useLoading from "../Hooks/useLoading"
+import React from "react";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
+import Socialbar from "../Components/Socialbar";
+import ThemeToggler from "../Components/ThemeToggler";
+import Spinner from "../Components/UI/Utils/Spinner";
+import useLoading from "../Hooks/useLoading";
 
 type LayoutProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: LayoutProps) => {
-  const loading = useLoading()
+  const loading = useLoading();
 
   return loading ? (
     <Spinner />
@@ -24,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Socialbar />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

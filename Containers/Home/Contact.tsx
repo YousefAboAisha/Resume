@@ -2,13 +2,13 @@ import React, { ChangeEvent, useRef, useState } from "react";
 import { BiUser } from "react-icons/bi";
 import { IoIosSend } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
-import Button from "../../Components/UI/Button";
-import CustomImage from "../../Components/UI/CustomImage";
-import Heading from "../../Components/UI/Heading";
-import Input from "../../Components/UI/Input";
-import TextArea from "../../Components/UI/TextArea";
+import Button from "../../Components/UI/Inputs/Button";
+import CustomImage from "../../Components/UI/Cards/CustomImage";
+import Heading from "../../Components/UI/Typography/Heading";
+import Input from "../../Components/UI/Inputs/Input";
+import TextArea from "../../Components/UI/Inputs/TextArea";
 import emailjs from "@emailjs/browser";
-import Snackbar from "../../Components/UI/Snackbar";
+import Snackbar from "../../Components/UI/Utils/Snackbar";
 
 const Contact = () => {
   const [Loading, setLoading] = useState(false);

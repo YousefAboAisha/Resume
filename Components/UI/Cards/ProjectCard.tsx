@@ -1,7 +1,7 @@
 import { FaEye, FaGithub } from "react-icons/fa";
 import CustomImage from "./CustomImage";
-import LinkButton from "./LinkButton";
-import Tag from "./Tag";
+import LinkButton from "../Inputs/LinkButton";
+import Tag from "../Typography/Tag";
 
 type ProjectCardProps = {
   src: string;

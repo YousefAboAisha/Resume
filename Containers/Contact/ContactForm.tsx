@@ -6,13 +6,13 @@ import {
   MdOutlineEmail,
   MdOutlineMessage,
 } from "react-icons/md";
-import Button from "../../Components/UI/Button";
-import Input from "../../Components/UI/Input";
-import Select from "../../Components/UI/Select";
-import TextArea from "../../Components/UI/TextArea";
+import Button from "../../Components/UI/Inputs/Button";
+import Input from "../../Components/UI/Inputs/Input";
+import Select from "../../Components/UI/Inputs/Select";
+import TextArea from "../../Components/UI/Inputs/TextArea";
 import { ProjectTypes } from "../../Data/projectTypes";
 import emailjs from "@emailjs/browser";
-import Snackbar from "../../Components/UI/Snackbar";
+import Snackbar from "../../Components/UI/Utils/Snackbar";
 
 const ContactForm = () => {
   const [Loading, setLoading] = useState(false);

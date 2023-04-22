@@ -1,5 +1,5 @@
 // import { getDownloadURL, ref, listAll } from "firebase/storage";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProjectCard from "../../Components/UI/Cards/ProjectCard";
 import SkeletonLoading from "../../Components/UI/Utils/SkeletonLoading";
 import { Sites } from "../../Data/Sites";

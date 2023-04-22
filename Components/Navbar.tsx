@@ -1,34 +1,34 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
-import React, { useEffect, useState } from "react"
-import { Routes } from "../Data/Routes"
-import { useScrollDirection } from "../Hooks/useScrollDirection"
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { Routes } from "../Data/Routes";
+import { useScrollDirection } from "../Hooks/useScrollDirection";
 
 const Navbar = () => {
-  const router = useRouter()
-  const [Style, setStyle] = useState("")
-  const path = router.pathname
-  const scrollDirection = useScrollDirection()
+  const router = useRouter();
+  const [Style, setStyle] = useState("");
+  const path = router.pathname;
+  const scrollDirection = useScrollDirection();
 
   const setTransform = () => {
     switch (path) {
       case "/":
-        setStyle("left-[12%]")
-        break
+        setStyle("left-[12%]");
+        break;
 
       case "/projects":
-        setStyle("left-[45%]")
-        break
+        setStyle("left-[45%]");
+        break;
 
       case "/contact":
-        setStyle("left-[79%]")
-        break
+        setStyle("left-[79%]");
+        break;
     }
-  }
+  };
 
   useEffect(() => {
-    setTransform()
-  }, [path])
+    setTransform();
+  }, [path]);
 
   // console.log(scrollDirection)
 
@@ -36,7 +36,7 @@ const Navbar = () => {
     <div
       className={`fixed ${
         scrollDirection === "down" ? "lg:-top-12" : "lg:top-4"
-      } flex items-center justify-center bottom-2 left-[50%] translate-x-[-50%] text-text_light dark:text-text_dark outline-none w-6/12 md:w-3/12 h-12 rounded-xl duration-500 bg-background_light dark:bg-background_dark border border-dark shadow-lg z-50`}
+      } flex items-center justify-center bottom-2 left-[50%] translate-x-[-50%] outline-none w-6/12 md:w-3/12 h-12 rounded-xl duration-500 full-theme shadow-lg z-10`}
     >
       {Routes.map((elem, index) => {
         return (
@@ -51,13 +51,13 @@ const Navbar = () => {
           >
             {<elem.icon size={25} />}
           </Link>
-        )
+        );
       })}
       <span
         className={`${Style} absolute left-[12%] top-[83%] -z-10 h-[2px] w-[9.2%] origin-center rounded-full bg-primary transition-all duration-500 outline-none`}
       ></span>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

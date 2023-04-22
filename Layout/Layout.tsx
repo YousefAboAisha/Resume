@@ -1,4 +1,5 @@
 import React from "react";
+import AddButton from "../Components/AddButton";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Socialbar from "../Components/Socialbar";
@@ -18,6 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
   ) : (
     <>
       <ThemeToggler />
+      <AddButton />
       <Navbar />
       <main className="container">{children}</main>
       <Socialbar />

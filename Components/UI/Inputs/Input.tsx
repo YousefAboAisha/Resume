@@ -1,15 +1,15 @@
 type InputProps = {
-  value: string
+  value: string;
   // handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  placeholder: string
-  style?: string
-  icon?: JSX.Element
-} & React.ComponentProps<"input">
+  placeholder: string;
+  style?: string;
+  icon?: JSX.Element;
+} & React.ComponentProps<"input">;
 
 const Input = ({ value, placeholder, style, icon, ...rest }: InputProps) => {
   return (
-    <div className="relative dark:bg-background_dark bg-background_light ">
-      <div className="absolute flex justify-center p-2 rounded-l-md items-center left-1 top-[50%] translate-y-[-50%] h-full border-none outline-none text-text_light dark:text-white">
+    <div className="relative bg-theme ">
+      <div className="absolute flex justify-center p-2 rounded-l-md items-center left-1 top-[50%] translate-y-[-50%] h-full border-none outline-none text-theme text-theme">
         {icon}
       </div>
 
@@ -21,7 +21,7 @@ const Input = ({ value, placeholder, style, icon, ...rest }: InputProps) => {
         required
       />
     </div>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;

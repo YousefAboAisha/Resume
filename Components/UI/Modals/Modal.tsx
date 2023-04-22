@@ -12,7 +12,7 @@ type ModalType = {
 const Modal = ({
   setIsOpen,
   isOpen,
-  bg = "bg-[#000000a0]",
+  bg = "bg-[#000000e7]",
   zIndex,
   children,
 }: ModalType) =>

@@ -36,7 +36,7 @@ const Navbar = () => {
     <div
       className={`fixed ${
         scrollDirection === "down" ? "lg:-top-12" : "lg:top-4"
-      } flex items-center justify-center bottom-2 left-[50%] translate-x-[-50%] outline-none w-6/12 md:w-3/12 h-12 rounded-xl duration-500 full-theme shadow-lg z-10`}
+      } flex items-center justify-center bottom-2 left-[50%] translate-x-[-50%] outline-none w-6/12 md:w-3/12 h-12 rounded-xl duration-500 full-theme shadow-lg z-20`}
     >
       {Routes.map((elem, index) => {
         return (

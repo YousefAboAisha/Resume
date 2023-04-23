@@ -31,7 +31,7 @@ const ProjectCard = ({
           width={1000}
           height={1000}
           alt={alt}
-          className="w-full h-full rounded-t-md group-hover:scale-110 duration-700"
+          className="w-auto mx-auto h-full rounded-t-md scale-110 group-hover:scale-125 duration-500"
         />
       </div>
 

@@ -2,17 +2,17 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import { FaUpload } from "react-icons/fa";
 import { storage } from "../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
+import { IoIosCloudDone } from "react-icons/io";
+import { AddNewProjectProps } from "./AddNewProject";
 
 type ImageUploaderProps = {
   initialURL?: string;
-  setUrl: Dispatch<SetStateAction<string>>;
-  url: string;
-};
+} & AddNewProjectProps;
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({
+  addForm,
+  setAddForm,
   initialURL,
-  setUrl,
-  url,
 }) => {
   const [image, setImage] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
@@ -37,8 +37,11 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
         console.log(error);
       },
       () => {
-        getDownloadURL(storageRef).then((url: React.SetStateAction<string>) => {
-          setUrl(url);
+        getDownloadURL(storageRef).then((url) => {
+          setAddForm({
+            ...addForm,
+            href: url,
+          });
           console.log(url);
           setIsUploading(false);
         });
@@ -65,28 +68,40 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
             accept="image/*"
             onChange={handleChange}
             className="w-0 h-0sUploading:cursor-not-allowed"
+            required
           />
 
-          {image ? (
-            <span className="abs-center"> {image.name}</span>
-          ) : (
-            <div className="abs-center flex flex-col gap-3 items-center justify-center">
+          <div className="abs-center flex flex-col items-center justify-center gap-2">
+            {progress == 100 ? (
+              <IoIosCloudDone className="text-green-500" size={50} />
+            ) : (
               <FaUpload size={50} className="text-theme" />
-              <span className="text-[13px] text-theme opacity-60">
-                Click Here to upload photo
-              </span>
-            </div>
-          )}
+            )}
+            <span className="text-[13px] text-theme">
+              {image ? (
+                <span
+                  className={`${
+                    progress == 100 ? "text-green-500" : ""
+                  } text-sm`}
+                >
+                  {isUploading ? "Uploading" : ""} {progress}%{" "}
+                  {progress == 100 ? "uploaded!" : ""}
+                </span>
+              ) : (
+                "Click Here to upload photo"
+              )}
+            </span>
+          </div>
         </label>
 
         <div className="relative w-32 h-32 rounded-lg border-theme">
-          {initialURL || url ? (
+          {initialURL || addForm.href ? (
             <div className="relative w-32 h-32 rounded-lg z-20">
               {isUploading ? (
                 <span className="abs-center text-sm">loading...</span>
               ) : (
                 <img
-                  src={initialURL || url}
+                  src={initialURL || addForm.href}
                   alt="Selected file"
                   className="absolute w-full h-full rounded-lg z-20"
                 />
@@ -99,10 +114,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
           )}
         </div>
       </div>
-      <span className={`${progress == 100 ? "text-green-500" : ""} text-sm`}>
-        {isUploading ? "Uploading" : ""} {progress}%{" "}
-        {progress == 100 ? "uploaded!" : ""}
-      </span>
     </>
   );
 };

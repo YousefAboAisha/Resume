@@ -1,13 +1,14 @@
-import Image from "next/image"
-import { useState } from "react"
+import Image from "next/image";
+import { useState } from "react";
 
 type CustomImageProps = {
-  src: string
-  width: number
-  height: number
-  alt: string
-  className?: string
-} & React.ComponentProps<"img">
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+} & React.ComponentProps<"img">;
 
 const CustomImage = ({
   src,
@@ -15,8 +16,9 @@ const CustomImage = ({
   height,
   alt,
   className,
+  priority = false,
 }: CustomImageProps) => {
-  const [Img, setImg] = useState(src)
+  const [Img, setImg] = useState(src);
 
   return (
     <Image
@@ -25,10 +27,13 @@ const CustomImage = ({
       height={height}
       alt={alt}
       onError={() => setImg("/notFound.jpg")}
-      loading="lazy"
+      // loading="lazy"
       className={className}
+      priority={priority}
+      blurDataURL="https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+      placeholder="blur"
     />
-  )
-}
+  );
+};
 
-export default CustomImage
+export default CustomImage;

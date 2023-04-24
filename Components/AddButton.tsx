@@ -18,7 +18,7 @@ const AddButton = () => {
       </div>
 
       <Modal setIsOpen={setIsOpen} isOpen={isOpen}>
-        <AddNewProject />
+        <AddNewProject setIsOpen={setIsOpen} />
       </Modal>
     </>
   );

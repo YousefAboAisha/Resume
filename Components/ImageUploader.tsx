@@ -42,7 +42,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
             ...addForm,
             href: url,
           });
-          console.log(url);
           setIsUploading(false);
         });
       }
@@ -79,14 +78,14 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
             )}
             <span className="text-[13px] text-theme">
               {image ? (
-                <span
-                  className={`${
+                <p
+                  className={` text-center mx-auto ${
                     progress == 100 ? "text-green-500" : ""
                   } text-sm`}
                 >
                   {isUploading ? "Uploading" : ""} {progress}%{" "}
                   {progress == 100 ? "uploaded!" : ""}
-                </span>
+                </p>
               ) : (
                 "Click Here to upload photo"
               )}

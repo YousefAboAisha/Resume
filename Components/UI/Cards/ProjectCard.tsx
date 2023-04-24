@@ -3,22 +3,22 @@ import CustomImage from "./CustomImage";
 import LinkButton from "../Inputs/LinkButton";
 import Tag from "../Typography/Tag";
 
-type ProjectCardProps = {
-  src: string;
+export type ProjectCardProps = {
+  href: string;
   alt: string;
   title: string;
   tags: string[];
-  githubLink: string;
-  liveLink: string;
+  github_link: string;
+  live_link: string;
 };
 
 const ProjectCard = ({
-  src,
+  href,
   alt,
   title,
   tags,
-  githubLink,
-  liveLink,
+  github_link,
+  live_link,
 }: ProjectCardProps) => {
   return (
     <div
@@ -27,7 +27,7 @@ const ProjectCard = ({
     >
       <div className="relative w-full h-[230px] overflow-hidden duration-300 ">
         <CustomImage
-          src={src}
+          src={href}
           width={1000}
           height={1000}
           alt={alt}
@@ -51,15 +51,15 @@ const ProjectCard = ({
             title="Source code"
             style="w-10/12 rounded-lg"
             icon={<FaGithub size={22} />}
-            href={githubLink}
+            href={github_link}
             target="_blank"
           />
 
           <LinkButton
             title=""
-            style="w-2/12 rounded-[12px] bg-transparent border border-primary hover:bg-transparent"
+            style="w-2/12 rounded-[12px] !bg-transparent border border-primary"
             icon={<FaEye size={22} className="text-primary dark:text-white" />}
-            href={liveLink}
+            href={live_link}
             target="_blank"
           />
         </div>

@@ -10,18 +10,13 @@ import { AddNewProjectProps } from "../../AddNewProject";
 import Tag from "../Typography/Tag";
 import Input from "./Input";
 
-// type tagInputType = {
-//   setTags: Dispatch<SetStateAction<string[]>>;
-//   tags: string[];
-// };
-
 const TagsInput = ({ addForm, setAddForm }: AddNewProjectProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const inputFocus = () => {
     setTimeout(() => {
       inputRef.current?.focus();
-    }, 100);
+    });
   };
 
   function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
@@ -58,6 +53,7 @@ const TagsInput = ({ addForm, setAddForm }: AddNewProjectProps) => {
         <div className="text-theme flex items-center gap-1">
           Example <Tag title="HTML" />|
         </div>
+
         {addForm.tags.map((tag, index) => (
           <Tag
             key={index}

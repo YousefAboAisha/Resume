@@ -52,9 +52,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     const currentForm = form.current;
-    // this prevents sending emails if there is no form.
-    // in case currentForm cannot possibly ever be null,
-    // you could alert the user or throw an Error, here
+
     if (currentForm == null) return;
 
     setLoading(true);
@@ -95,14 +93,6 @@ const ContactForm = () => {
         onSubmit={(e) => sendEmail(e)}
         className="relative flex flex-col gap-4 mt-24 w-10/12 md:w-8/12 lg:w-6/12 z-10"
       >
-        {/* <CustomImage
-          src={"/vector.png"}
-          width={100}
-          height={100}
-          alt="Pattern image"
-          className="abs-center w-full h-full blur-2xl opacity-20 -z-10 rotate-45"
-        /> */}
-
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input
             placeholder="First name"

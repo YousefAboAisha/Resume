@@ -1,16 +1,18 @@
-import {
-  // Dispatch,
-  KeyboardEvent,
-  // SetStateAction,
-  useRef,
-  // useState,
-} from "react";
+import { KeyboardEvent, useRef } from "react";
 import { BiCategoryAlt } from "react-icons/bi";
 import { AddNewProjectProps } from "../../AddNewProject";
 import Tag from "../Typography/Tag";
 import Input from "./Input";
 
-const TagsInput = ({ addForm, setAddForm }: AddNewProjectProps) => {
+type TagErrorType = {
+  error?: string;
+};
+
+const TagsInput = ({
+  addForm,
+  setAddForm,
+  error,
+}: AddNewProjectProps & TagErrorType) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const inputFocus = () => {
@@ -63,6 +65,8 @@ const TagsInput = ({ addForm, setAddForm }: AddNewProjectProps) => {
           />
         ))}
       </div>
+
+      {error ? <span className="text-[red] text-[12px]">{error}</span> : null}
     </div>
   );
 };

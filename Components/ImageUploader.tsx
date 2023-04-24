@@ -7,12 +7,16 @@ import { AddNewProjectProps } from "./AddNewProject";
 
 type ImageUploaderProps = {
   initialURL?: string;
+  error?: string;
+  setError: Dispatch<SetStateAction<string>>;
 } & AddNewProjectProps;
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({
   addForm,
   setAddForm,
   initialURL,
+  error,
+  setError,
 }) => {
   const [image, setImage] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
@@ -43,6 +47,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
             href: url,
           });
           setIsUploading(false);
+          setError("");
         });
       }
     );
@@ -60,14 +65,16 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
       <div className="flex flex-row items-center gap-4 mt-4">
         <label
           title="Upload your photo"
-          className="relative w-9/12 h-32 rounded-lg cursor-pointer border-theme"
+          className={` ${
+            isUploading ? "cursor-not-allowed" : "cursor-pointer"
+          } relative w-9/12 h-32 rounded-lg border-theme`}
         >
           <input
+            disabled={isUploading}
             type="file"
             accept="image/*"
             onChange={handleChange}
-            className="w-0 h-0sUploading:cursor-not-allowed"
-            required
+            className={`w-full h-full absolute opacity-0 disabled:cursor-not-allowed`}
           />
 
           <div className="abs-center flex flex-col items-center justify-center gap-2">
@@ -113,6 +120,10 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
           )}
         </div>
       </div>
+
+      {error ? (
+        <span className="text-[red] text-[12px] -translate-y-">{error}</span>
+      ) : null}
     </>
   );
 };

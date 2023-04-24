@@ -22,8 +22,8 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div
-      className="group relative flex flex-col border border-light dark:border-dark 
-     rounded-md shadow-lg dark:bg-background_dark bg-background_light"
+      className="group relative flex flex-col border 
+     rounded-md shadow-lg full-theme"
     >
       <div className="relative w-full h-[230px] overflow-hidden duration-300 ">
         <CustomImage
@@ -41,7 +41,7 @@ const ProjectCard = ({
         </h2>
 
         <div className="flex flex-row gap-1 flex-wrap h-[70px] overflow-auto">
-          {tags.map((elem, index) => {
+          {tags?.map((elem, index) => {
             return <Tag key={index} title={elem} />;
           })}
         </div>

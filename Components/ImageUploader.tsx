@@ -62,12 +62,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
 
   return (
     <>
-      <div className="flex flex-row items-center gap-4 mt-4">
+      <div className="flex flex-row items-center gap-4 mt-4 w-full">
         <label
           title="Upload your photo"
           className={` ${
             isUploading ? "cursor-not-allowed" : "cursor-pointer"
-          } relative w-9/12 h-32 rounded-lg border-theme`}
+          } relative  w-[78%] h-32 rounded-lg border-theme`}
         >
           <input
             disabled={isUploading}
@@ -100,9 +100,9 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
           </div>
         </label>
 
-        <div className="relative w-32 h-32 rounded-lg border-theme">
+        <div className="relative w-[22%] h-32 rounded-lg border-theme">
           {initialURL || addForm.href ? (
-            <div className="relative w-32 h-32 rounded-lg z-20">
+            <div className="relative w-full h-32 rounded-lg z-20">
               {isUploading ? (
                 <span className="abs-center text-sm">loading...</span>
               ) : (

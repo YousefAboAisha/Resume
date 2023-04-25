@@ -3,20 +3,20 @@ import { FaUpload } from "react-icons/fa";
 import { storage } from "../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
 import { IoIosCloudDone } from "react-icons/io";
-import { AddNewProjectProps } from "./AddNewProject";
+import { AddNewProjectProps, FormErrorsProps } from "./AddNewProject";
 
 type ImageUploaderProps = {
   initialURL?: string;
   error?: string;
-  setError: Dispatch<SetStateAction<string>>;
-} & AddNewProjectProps;
+} & AddNewProjectProps &
+  FormErrorsProps;
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({
   addForm,
   setAddForm,
   initialURL,
   error,
-  setError,
+  setFormErrors,
 }) => {
   const [image, setImage] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
@@ -47,7 +47,10 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
             href: url,
           });
           setIsUploading(false);
-          setError("");
+          setFormErrors((prev) => ({
+            ...prev,
+            imageError: "",
+          }));
         });
       }
     );
@@ -74,7 +77,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
             type="file"
             accept="image/*"
             onChange={handleChange}
-            className={`w-full h-full absolute opacity-0 disabled:cursor-not-allowed`}
+            className={`w-full h-full absolute opacity-0 disabled:cursor-not-allowed cursor-pointer`}
           />
 
           <div className="abs-center flex flex-col items-center justify-center gap-2">

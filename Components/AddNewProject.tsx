@@ -27,14 +27,25 @@ export interface AddNewProjectProps {
       title: string;
     }>
   >;
+}
+
+export interface FormErrorsProps {
   formErrors?: {
-    passwordError: string;
     imageError: string;
+    nameError: string;
+    passwordError: string;
+    ghError: string;
+    liveError: string;
+    tagsError: string;
   };
-  setFormErrors?: Dispatch<
+  setFormErrors: Dispatch<
     SetStateAction<{
-      passwordError: string;
       imageError: string;
+      nameError: string;
+      passwordError: string;
+      ghError: string;
+      liveError: string;
+      tagsError: string;
     }>
   >;
 }
@@ -49,12 +60,18 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
 
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
-  const [imageError, setImageError] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [ghError, setGhError] = useState("");
-  const [liveError, setLiveError] = useState("");
-  const [tagsError, setTagsError] = useState("");
+
+  // Errors states
+  const [formErrors, setFormErrors] = useState({
+    imageError: "",
+    nameError: "",
+    passwordError: "",
+    ghError: "",
+    liveError: "",
+    tagsError: "",
+  });
+
+  //Form states
   const [addForm, setAddForm] = useState({
     alt: "Project photo",
     github_link: "",
@@ -66,96 +83,127 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
 
   const imageHandler = () => {
     let flag = false;
-
     if (addForm.href == "" || !addForm.href) {
-      setImageError("Please upload project image!");
-      setLoading(false);
       return flag;
     }
     flag = true;
-    setImageError("");
     return flag;
   };
 
   const URLHandler_GH = () => {
     let flag = false;
-
     if (!httpRegex.test(addForm.github_link)) {
-      setGhError("Please enter a valid URL");
-      setLoading(false);
       return flag;
     }
     flag = true;
-    setGhError("");
     return flag;
   };
 
   const URLHandler_live = () => {
     let flag = false;
-
     if (!httpRegex.test(addForm.live_link)) {
-      setLiveError("Please enter a valid URL");
-      setLoading(false);
       return flag;
     }
     flag = true;
-    setLiveError("");
     return flag;
   };
 
   const nameHandler = () => {
     let flag = false;
     if (addForm.title.trim() === "") {
-      setNameError("Name must be filled!");
-      setLoading(false);
+      flag = false;
     } else if (addForm.title.length < 3) {
-      setNameError("Name must be more than 3 characters!");
-      setLoading(false);
+      flag = false;
     } else {
       flag = true;
-      setNameError("");
     }
     return flag;
   };
 
   const passwordHandler = () => {
     let flag = false;
-
     if (password != "mzs1337") {
-      setPasswordError("Please enter a valid password");
-      setLoading(false);
       return flag;
     }
     flag = true;
-    setPasswordError("");
     return flag;
   };
 
   const TagsHandler = () => {
     let flag = false;
-
     if (addForm.tags.length < 3) {
-      setTagsError("You must add at least 3 tags");
-      setLoading(false);
       return flag;
     }
     flag = true;
-    setTagsError("");
     return flag;
   };
 
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
+  // Set all Inputs Errors if found
+  const setInputsErrros = () => {
+    const newErrors = {
+      imageError: "",
+      nameError: "",
+      passwordError: "",
+      ghError: "",
+      liveError: "",
+      tagsError: "",
+    };
 
-    if (
+    // Image validation
+    if (addForm.href == "" || !addForm.href) {
+      newErrors.imageError = "Please upload project image!";
+    }
+
+    // Github link validation
+    if (!httpRegex.test(addForm.github_link)) {
+      newErrors.ghError = "Please enter a valid URL";
+    }
+
+    // Live link validation
+    if (!httpRegex.test(addForm.live_link)) {
+      newErrors.liveError = "Please enter a valid URL";
+    }
+
+    // Project title validation
+    if (addForm.title.trim() === "") {
+      newErrors.nameError = "Name must be filled!";
+    } else if (addForm.title.length < 3) {
+      newErrors.nameError = "Name must be more than 3 characters!";
+    }
+
+    // Password validation
+    if (password !== "mzs1337") {
+      newErrors.passwordError = "Please enter a valid password";
+    }
+
+    // Tags validation
+    if (addForm.tags.length < 3) {
+      newErrors.tagsError = "You must add at least 3 tags";
+    }
+
+    setFormErrors(newErrors);
+    setLoading(false);
+  };
+
+  // Check all inputs validities
+  const checkAllInputsValidity = () => {
+    return (
       imageHandler() &&
       nameHandler() &&
       passwordHandler() &&
       URLHandler_live() &&
       URLHandler_GH() &&
       TagsHandler()
-    )
+    );
+  };
+
+  // submit handler for adding new project
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setInputsErrros();
+
+    if (checkAllInputsValidity()) {
+      setLoading(true);
       fetch(PUBLIC_URL, {
         method: "POST",
         headers: {
@@ -180,8 +228,10 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
           console.error("There was an error!", error);
           setLoading(false);
         });
+    }
   };
 
+  // To add customValidity message
   const handleInvalid_password = (event: ChangeEvent<HTMLInputElement>) => {
     event.target.setCustomValidity("Please enter a correct password ");
   };
@@ -195,8 +245,8 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
       <ImageUploader
         addForm={addForm}
         setAddForm={setAddForm}
-        error={imageError}
-        setError={setImageError}
+        error={formErrors.imageError}
+        setFormErrors={setFormErrors}
       />
 
       <div className="relative flex flex-col gap-3 mt-4">
@@ -211,7 +261,7 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
           }
           className="pl-4"
           icon={<FaProjectDiagram />}
-          error={nameError}
+          error={formErrors.nameError}
           required={false}
         />
 
@@ -230,7 +280,7 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
               type={"text"}
               icon={<FaEye size={22} />}
               required={false}
-              error={liveError}
+              error={formErrors.liveError}
             />
           </div>
 
@@ -248,7 +298,7 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
               type={"text"}
               icon={<FaGithub size={22} />}
               required={false}
-              error={ghError}
+              error={formErrors.ghError}
             />
           </div>
         </div>
@@ -260,14 +310,14 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
           className="pl-4 pr-8"
           type={"password"}
           icon={<AiFillLock size={22} />}
-          error={passwordError}
+          error={formErrors.passwordError}
           // onInvalid={handleInvalid}
           required={false}
         />
         <TagsInput
           addForm={addForm}
           setAddForm={setAddForm}
-          error={tagsError}
+          error={formErrors.tagsError}
         />
       </div>
 

@@ -36,7 +36,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             value={value}
             {...rest}
-            className={`h-[56px] pl-11 full-theme rounded-[8px] outline-none duration-300 w-full disabled:cursor-not-allowed invalid:border-[red] ${style}`}
+            className={`h-[56px] pl-11 full-theme rounded-[8px] outline-none duration-300 w-full disabled:cursor-not-allowed ${style}`}
             placeholder={placeholder}
             pattern={pattern}
             required={required}

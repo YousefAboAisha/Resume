@@ -23,6 +23,7 @@ const TagsInput = ({
 
   function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
     if (e.key !== "Enter") return;
+    e.preventDefault();
     const value = e.currentTarget.value;
     if (!value.trim()) return;
     setAddForm({

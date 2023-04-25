@@ -81,65 +81,8 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
     title: "",
   });
 
-  const imageHandler = () => {
-    let flag = false;
-    if (addForm.href == "" || !addForm.href) {
-      return flag;
-    }
-    flag = true;
-    return flag;
-  };
-
-  const URLHandler_GH = () => {
-    let flag = false;
-    if (!httpRegex.test(addForm.github_link)) {
-      return flag;
-    }
-    flag = true;
-    return flag;
-  };
-
-  const URLHandler_live = () => {
-    let flag = false;
-    if (!httpRegex.test(addForm.live_link)) {
-      return flag;
-    }
-    flag = true;
-    return flag;
-  };
-
-  const nameHandler = () => {
-    let flag = false;
-    if (addForm.title.trim() === "") {
-      flag = false;
-    } else if (addForm.title.length < 3) {
-      flag = false;
-    } else {
-      flag = true;
-    }
-    return flag;
-  };
-
-  const passwordHandler = () => {
-    let flag = false;
-    if (password != "mzs1337") {
-      return flag;
-    }
-    flag = true;
-    return flag;
-  };
-
-  const TagsHandler = () => {
-    let flag = false;
-    if (addForm.tags.length < 3) {
-      return flag;
-    }
-    flag = true;
-    return flag;
-  };
-
   // Set all Inputs Errors if found
-  const setInputsErrros = () => {
+  const checkInputValidity = () => {
     const newErrors = {
       imageError: "",
       nameError: "",
@@ -149,26 +92,37 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
       tagsError: "",
     };
 
+    let flag_1 = true;
+    let flag_2 = true;
+    let flag_3 = true;
+    let flag_4 = true;
+    let flag_5 = true;
+
     // Image validation
     if (addForm.href == "" || !addForm.href) {
       newErrors.imageError = "Please upload project image!";
+      flag_1 = false;
     }
 
     // Github link validation
     if (!httpRegex.test(addForm.github_link)) {
       newErrors.ghError = "Please enter a valid URL";
+      flag_2 = false;
     }
 
     // Live link validation
     if (!httpRegex.test(addForm.live_link)) {
       newErrors.liveError = "Please enter a valid URL";
+      flag_3 = false;
     }
 
     // Project title validation
     if (addForm.title.trim() === "") {
       newErrors.nameError = "Name must be filled!";
+      flag_4 = false;
     } else if (addForm.title.length < 3) {
       newErrors.nameError = "Name must be more than 3 characters!";
+      flag_4 = false;
     }
 
     // Password validation
@@ -179,30 +133,20 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
     // Tags validation
     if (addForm.tags.length < 3) {
       newErrors.tagsError = "You must add at least 3 tags";
+      flag_5 = false;
     }
 
     setFormErrors(newErrors);
     setLoading(false);
-  };
-
-  // Check all inputs validities
-  const checkAllInputsValidity = () => {
-    return (
-      imageHandler() &&
-      nameHandler() &&
-      passwordHandler() &&
-      URLHandler_live() &&
-      URLHandler_GH() &&
-      TagsHandler()
-    );
+    return flag_1 && flag_2 && flag_3 && flag_4 && flag_5;
   };
 
   // submit handler for adding new project
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setInputsErrros();
+    checkInputValidity();
 
-    if (checkAllInputsValidity()) {
+    if (checkInputValidity()) {
       setLoading(true);
       fetch(PUBLIC_URL, {
         method: "POST",

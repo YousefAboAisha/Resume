@@ -42,10 +42,10 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
       },
       () => {
         getDownloadURL(storageRef).then((url) => {
-          setAddForm({
-            ...addForm,
+          setAddForm((prev) => ({
+            ...prev,
             href: url,
-          });
+          }));
           setIsUploading(false);
           setFormErrors((prev) => ({
             ...prev,

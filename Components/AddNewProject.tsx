@@ -97,6 +97,7 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
     let flag_3 = true;
     let flag_4 = true;
     let flag_5 = true;
+    let flag_6 = true;
 
     // Image validation
     if (addForm.href == "" || !addForm.href) {
@@ -128,17 +129,18 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
     // Password validation
     if (password !== "mzs1337") {
       newErrors.passwordError = "Please enter a valid password";
+      flag_5 = false;
     }
 
     // Tags validation
     if (addForm.tags.length < 3) {
       newErrors.tagsError = "You must add at least 3 tags";
-      flag_5 = false;
+      flag_6 = false;
     }
 
     setFormErrors(newErrors);
     setLoading(false);
-    return flag_1 && flag_2 && flag_3 && flag_4 && flag_5;
+    return flag_1 && flag_2 && flag_3 && flag_4 && flag_5 && flag_6;
   };
 
   // submit handler for adding new project

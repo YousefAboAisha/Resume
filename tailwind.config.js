@@ -55,11 +55,17 @@ module.exports = {
           "0%, 100%": { scale: "1", opacity: 1 },
           "50%": { scale: "1.01", opacity: 0.9 },
         },
+        shake: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "10%, 30%, 50%, 70%, 90%": { transform: "translateX(-5px)" },
+          "20%, 40%, 60%, 80%": { transform: "translateX(5px)" },
+        },
       },
       animation: {
         HorizentalMove: "HorizentalMove 3.5s linear infinite",
         ShadowPulse: "ShadowPulse 2.5s linear infinite",
         ScaleEffect: "ScaleEffect 4s linear infinite",
+        shake: "shake 0.7s linear 1",
       },
       backgroundImage: {
         "hero-pattern": "url('/technology.jpg')",
@@ -69,4 +75,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

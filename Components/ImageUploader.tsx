@@ -69,7 +69,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
       <div className="flex flex-row items-center gap-4 mt-4 w-full">
         <label
           title="Upload your photo"
-          className={` ${hasError ? "!border-red-500 border" : ""}  ${
+          className={` ${hasError ? "!border-[red] animate-shake" : ""}  ${
             isUploading ? "cursor-not-allowed" : "cursor-pointer"
           } relative  w-[78%] h-32 rounded-lg border-theme`}
         >

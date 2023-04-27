@@ -21,6 +21,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
   const [image, setImage] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
   const [isUploading, setIsUploading] = useState(false);
+  const hasError = error !== "";
 
   const handleUpload = (file: File) => {
     setIsUploading(true);
@@ -68,7 +69,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
       <div className="flex flex-row items-center gap-4 mt-4 w-full">
         <label
           title="Upload your photo"
-          className={` ${
+          className={` ${hasError ? "!border-red-500 border" : ""}  ${
             isUploading ? "cursor-not-allowed" : "cursor-pointer"
           } relative  w-[78%] h-32 rounded-lg border-theme`}
         >

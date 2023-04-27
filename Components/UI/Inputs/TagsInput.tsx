@@ -48,14 +48,15 @@ const TagsInput = ({
         onKeyDown={handleKeyDown}
         type="text"
         className=""
-        placeholder="Add project's keywords"
+        placeholder="Add project's keywords- Press enter after typing your keyword"
         icon={<BiCategoryAlt size={22} />}
         required={false}
+        error={error}
       />
       <div className="flex flex-row items-center flex-wrap gap-2 text-sm">
-        <div className="text-theme flex items-center gap-1">
+        {/* <div className="text-theme flex items-center gap-1">
           Example <Tag title="HTML" />|
-        </div>
+        </div> */}
 
         {addForm.tags.map((tag, index) => (
           <Tag
@@ -67,7 +68,7 @@ const TagsInput = ({
         ))}
       </div>
 
-      {error ? <span className="text-[red] text-[12px]">{error}</span> : null}
+      {/* {error ? <span className="text-[red] text-[12px]">{error}</span> : null} */}
     </div>
   );
 };

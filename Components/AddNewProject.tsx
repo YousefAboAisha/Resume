@@ -92,55 +92,50 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
       tagsError: "",
     };
 
-    let flag_1 = true;
-    let flag_2 = true;
-    let flag_3 = true;
-    let flag_4 = true;
-    let flag_5 = true;
-    let flag_6 = true;
+    let flag = true;
 
     // Image validation
     if (addForm.href == "" || !addForm.href) {
       newErrors.imageError = "Please upload project image!";
-      flag_1 = false;
+      flag = false;
     }
 
     // Github link validation
     if (!httpRegex.test(addForm.github_link)) {
       newErrors.ghError = "Please enter a valid URL";
-      flag_2 = false;
+      flag = false;
     }
 
     // Live link validation
     if (!httpRegex.test(addForm.live_link)) {
       newErrors.liveError = "Please enter a valid URL";
-      flag_3 = false;
+      flag = false;
     }
 
     // Project title validation
     if (addForm.title.trim() === "") {
       newErrors.nameError = "Name must be filled!";
-      flag_4 = false;
+      flag = false;
     } else if (addForm.title.length < 3) {
       newErrors.nameError = "Name must be more than 3 characters!";
-      flag_4 = false;
+      flag = false;
     }
 
     // Password validation
     if (password !== "mzs1337") {
       newErrors.passwordError = "Please enter a valid password";
-      flag_5 = false;
+      flag = false;
     }
 
     // Tags validation
     if (addForm.tags.length < 3) {
       newErrors.tagsError = "You must add at least 3 tags";
-      flag_6 = false;
+      flag = false;
     }
 
     setFormErrors(newErrors);
     setLoading(false);
-    return flag_1 && flag_2 && flag_3 && flag_4 && flag_5 && flag_6;
+    return flag;
   };
 
   // submit handler for adding new project

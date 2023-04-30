@@ -25,7 +25,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const hasError = error !== "";
+    const hasError = error;
+
     return (
       <>
         <div className="relative bg-theme ">
@@ -38,7 +39,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             value={value}
             {...rest}
             className={`h-[56px] pl-11 full-theme rounded-[8px] outline-none duration-300 w-full disabled:cursor-not-allowed ${
-              hasError ? "!border-[red] animate-shake" : ""
+              error ? "!border-[red] animate-shake" : ""
             } ${style}`}
             placeholder={placeholder}
             pattern={pattern}

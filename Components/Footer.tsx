@@ -9,7 +9,7 @@ const Footer = () => {
   const date = new Date().getFullYear();
 
   return (
-    <footer className="relative container grid grid-cols-1 lg:grid-cols-2 mt-24 mb-12 p-6 gap-4 text-text_light dark:text-text_dark bg-background_light dark:bg-background_dark border dark:border-dark rounded-lg shadow-lg">
+    <footer className="relative full-theme container grid grid-cols-1 lg:grid-cols-2 mt-24 mb-12 p-6 gap-4 rounded-lg shadow-lg">
       <div className="flex flex-col gap-6">
         {FooterData.map((elem, index) => {
           return (

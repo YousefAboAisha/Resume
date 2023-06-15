@@ -180,7 +180,7 @@ const AddNewProject = ({ setIsOpen }: setOpenType) => {
   return (
     <form
       onSubmit={submitHandler}
-      className="abs-center bg-theme fixed flex flex-col gap-2 bg-background_light p-6 rounded-lg w-11/12 md:w-9/12 lg:w-6/12 z-[1000001]"
+      className="flex flex-col gap-2 p-6 rounded-lg"
     >
       <Heading title="Add new project" additionalStyles="!text-xl" />
       <ImageUploader
